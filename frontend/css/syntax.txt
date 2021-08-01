@@ -1,0 +1,68 @@
+1. What is the cursor property in CSS?
+
+The cursor property controls what the mouse cursor will look like when it is located over the element in which this property is set. It's only relevant in browsers/operating systems in which there is a mouse and cursor. They are used for UX to convey the idea of certain functionality. 
+
+.auto            { cursor: auto; }
+.default         { cursor: default; }
+.none            { cursor: none; }
+.context-menu    { cursor: context-menu; }
+.help            { cursor: help; }
+.pointer         { cursor: pointer; }
+.progress        { cursor: progress; }
+.wait            { cursor: wait; }
+.cell            { cursor: cell; }
+.crosshair       { cursor: crosshair; }
+.text            { cursor: text; }
+.vertical-text   { cursor: vertical-text; }
+.alias           { cursor: alias; }
+.copy            { cursor: copy; }
+.move            { cursor: move; }
+.no-drop         { cursor: no-drop; }
+.not-allowed     { cursor: not-allowed; }
+.all-scroll      { cursor: all-scroll; }
+.col-resize      { cursor: col-resize; }
+.row-resize      { cursor: row-resize; }
+.n-resize        { cursor: n-resize; }
+.e-resize        { cursor: e-resize; }
+.s-resize        { cursor: s-resize; }
+.w-resize        { cursor: w-resize; }
+.ns-resize       { cursor: ns-resize; }
+.ew-resize       { cursor: ew-resize; }
+.ne-resize       { cursor: ne-resize; }
+.nw-resize       { cursor: nw-resize; }
+.se-resize       { cursor: se-resize; }
+.sw-resize       { cursor: sw-resize; }
+.nesw-resize     { cursor: nesw-resize; }
+.nwse-resize     { cursor: nwse-resize; }
+
+Ther can also be an image:
+
+.custom {
+  /* The second value here is a fallback. */
+  cursor: url(images/my-cursor.png), auto;
+
+  /* You may need coordinates to adjust the pointer
+     for example, the custom cursor is circular and you want
+     the middle to be where you click */
+  cursor: url(target.svg) 15 15, move;
+}
+
+Some WebKit only cursors:
+
+-webkit-zoom-in
+-webkit-zoom-out
+-webkit-zoom-grab
+-webkit-zoom-grabbing
+
+2. What is focus in CSS?
+
+The :focus pseudo class in CSS is used for styling an element that is currenctly targeted by the keyboard, or activated by the mouse. 
+
+textarea:focus {
+  background: pink;
+}
+
+Any element (most commonly <input>s and <textarea>s) are in “focus” when they are selected and ready to enter text (like when a cursor is blinking). Mouse users can click them (or their related label) to focus, and keyboard users can TAB into them.
+
+
+
