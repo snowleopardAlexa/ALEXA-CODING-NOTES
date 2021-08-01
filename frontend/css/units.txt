@@ -1,0 +1,245 @@
+1. What are the measurement units in CSS? 
+
+- pixels - (px)
+- rem 
+- em 
+- percentage
+- fr
+- ch 
+- vw
+- vh
+
+
+2. Why pixles are good only for layout and spacing, but not for font-size? 
+
+Pixels are the easiest measurment to use, but they shouldn't be used for font-size. A user can change the default font-size of a browser or device, and our header's font-size (20px) will remain 20px, and the user's font preferences won't be reflected which creates a bad user experience. 
+
+
+3. What is em and why it is wise to use it for font-sizes?
+
+An em is equal to the computed font-size of that element's parent.
+If there is a div element defined with font-size: 16px then for that div and for its children 1em = 16px.
+
+BE CAREFUL! If you give font-size: 20px to .parent and font-size: 1.5em to .child, you might create a problem. Computed font sizes of both .child (#outerChild and #innerChild) are different. #outerChild uses font-size from its parent .parent, so computed font-size of #outerChild will be 1.5 * 20 = 30px. And #innerChild uses font-size from its parent #outerChild (which already has computed font-size of 30px). Hence the computed font-size of nested .child will be 1.5 * 30px = 45px. 
+
+While using em units, it is a good practice not to define font-size explicitly except root element while using em in the project. Em works great with layout like sidebar menu when you want submenu items to have smaller font-size gradually. You might want to use em with media queries as well. 
+
+
+4. What are rem values, is it worth to use them as font-size?
+
+Rem values are relative to the root html element, not to the parent element. That is, if font-size of the root element is 16px then 1 rem = 16px for all elements. If font-size is not explicitly defined in root element then 1rem will be equal to the default font-size provided by the browser (usually 16px). 
+
+Rem uses root element's font-size instead of its parent's font-size that's why it is preferable to use it to spacing and font-sizes. 
+
+Setting root font-size in pixels will create a problem when users will change the size of the fonts in his browser, that's why we should use a percentage. Usually default font-size of the browser is 16px. Settings font-size: 100% will make 1rem = 16px. But it will make calculations a little difficult. 
+
+A better way is to set font-size: 62.5% of 16px is 10px which makes 1 rem = 10px.
+
+font-size: 62.5% makes 1rem = 10px. 
+
+
+5. Why pixles are bad for accessibility and why you shouldn't use them through your entire app?
+
+Pixre straightforward and it is easy to manipulate them, but they should be used only when you want something to look exactly the same width and height despite the user's browser settings. A good use case for pixels is when you define a border. When the user changes the font-size of its browser nothing will happen within your app - a bad user experience. Pixels ignore browser's settings. 
+
+
+6. When should you use rem unit? What is rem unit?
+
+One rem unit is the font-size that you have defined on the html element. The "r" stands for relative. 
+
+html {
+    font-size: 10px;
+}
+
+p {
+    font-size: 1.4rem; --> 14px (1.4 * 10px)
+}
+
+h1 {
+    font-size: 2.2rem; --> 22px
+}
+
+html {
+    font-size: 10px;
+}
+
+div {
+    background-color: red;
+    width: 50rem; --> 500px;
+}
+
+p {
+    font-size: 1.4rem --> 22px;
+}
+
+
+7. When should we use em? What is the em unit?
+
+The em unit works exactly the same as the rem unit, but em's fon't take base font-size into account. Em's use the font-size of their current element.
+
+html {
+    font-size: 10px;
+}
+div {
+    background-color: red;
+    font-size: 0.5em; // This will be 5px (10 * 0.5)
+    width: 50em; // This will be 250px (5px * 50) 
+}
+
+The width of the div gets defined by its own font-size, instead of the html tag's font-size.
+
+8. Why using a combination of em's can get very tricky?
+
+Imagine the situation where a child sets the font-size to em and the parent of that child sets the font-size to 0.5em. This can get messy quickly. Imagine the situation where multiple elements are nested, all defining a font-size in em. 
+
+When using this solution to define sizes, the same problem occurs as when using pixels. It doesn't rspect the browser settings because we hard-coded the font-size of 10px on the html element. 
+
+SOLVE THE PROBLEM: 
+
+html {
+    font-size: 62.5%
+}
+
+Almost all browsers have a default font-size of 16px. This gets you to a 10px base font-size that does respect the browser settings and makes the application more accessible. 
+
+
+9. Why we should always remember to check media queries in Safari when we write rems?
+
+Safari sometimes messes up rem's in media queries that's why you might use ems for them. Check the styling in Safari.
+
+10. How do percentages work?
+
+Percentages are straightforward. The percentage is always looking at the size of its parent. This means that in the example below the second div will be 50% of its parent, which comes down to 30% of the page width. That is because the parent of the second div, the first div, is 60% of the page width.
+
+<div>
+First div
+<div>Second div</div>
+</div>
+
+div {
+    width: 60%;
+}
+
+div div {
+    width: 50%;
+}
+
+Percentages are responsive by default - while resizing browser pixels, rems, and ems would not be responsive, but percentages are. When you change the parent's width the children will still
+behave in the same way. Pegs are useful for defining layouts. 
+
+REMEMBER: The behavior of percentages change in combination with position: absolute; and position: relative;
+
+11. How do units work with flexbox?
+
+When defining a div with the display: flex; style it automatically calculates the space and gives each child an equal width.
+
+<div class="container">
+ <div>One</div>
+ <div>Two</div>
+ <div>Three</div>
+</div>
+
+.container {
+    display: flex;
+    background-color: red;
+}
+
+.container div {
+    background-color: yellow;
+}
+
+You can also give the .container div a fixed width of 20%, for example. This will give every div inside the container a width of 20% of the container. This means that there will be a space leftover of 40%. Percentages are a very good way to get going with flexboxes.
+
+12. What is FR?
+
+Fr - fractional unit, is a relatively new unit in CSS. This unit is often used in combination with grids. 
+
+<div class="grid">
+    <div>Div one</div>
+    <div>Div two</div>
+    <div>Div three</div>
+</div>
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+    background-color: red;
+}
+
+.grid div {
+    background-color: blue;
+}
+
+The column sizes get defined by the grid-template-columns property. There is a total of 5fr, which means that 1fr will come down to 20%. This means that the column widths will be 20%, 40%, and 40% respectively. Fr is a really nice unit to use because it takes a lot of the math out of the way. You can change the amount of fr’s in the grid and the size of 1 fr will automatically get figured out for you. This is why you could, and maybe should, prefer them over percentages when defining a grid.
+
+
+13. What is ch?
+
+Ch - character width. The character width of the “0” (zero) character defined in the font, to be more precisely. So however wide the “0” character is in a given typeface, that’s the measure of one ch. This means that there is a difference between the behavior of the ch unit in monospace and proportional fonts.
+
+In a monospace font, where each character has the same width, you can use the ch unit to make sure that 100 characters fit on one line, for example. In proportional fonts every character can have a different width, which makes it impossible to fit exactly 100 characters on one line.
+<div class="one">
+    <h1>Courier</h1>
+    <span>Lorem ipsum dolor amit etc</span>
+    <span>abcdefghijklmnopqrstuvwxyz</span>
+    <span>12345678901234567890123456</span>
+    <span>mmmmmmmmmmmmmmmmmmmmmmmmmm</span>
+</div>
+<div class="two">
+    <h1>Arial</h1>
+    <span>Lorem ipsum dolor amit etc</span>
+    <span>abcdefghijklmnopqrstuvwxyz</span>
+    <span>12345678901234567890123456</span>
+    <span>mmmmmmmmmmmmmmmmmmmmmmmmmm</span>
+</div>
+.one {
+    font-family: Courier;
+}
+.two {
+    font-family: Arial;
+}
+span {
+    width: 26ch;
+    display: block;
+    background-color: red;
+    margin: 0.25rem 0;
+}
+
+The ch unit comes in handy when you want the width to tightly relate to the font that you use. But note that this width per character differs when using a proportional font.
+
+
+14. What are VW and VH and when to use them? 
+
+Vw - viewport width
+Vh - viewport height
+
+No matter where you are, inside a child or in a grand grandchild, the vw and vh will always be the width and height of the viewport. The vw and vh don’t care about the size of its parent.
+
+<div>
+    Div one
+    <div>Div two</div>
+</div>
+div {
+    width: 50%;
+}
+div div {
+    width: 100vw;
+}
+
+The child div will be 100% of the viewport width, despite its parent's width being 50%. The same goes for the vh unit.
+
+VW is useful for creating full width elements (100%) that fill up the entire viewport’s width. Of course, you can use any percentage of the viewport’s width to achieve other goals, such as 50% for half the width, etc.
+
+VH is useful for creating full height elements (100%) that fill up the entire viewport’s height. Of course, you can use any percentage of the viewport’s height to achieve other goals, such as 50% for half the height, etc.
+
+% is similar to VW and VH but it is not a length that is relative to viewport’s width or height. Instead, it is a percentage of the parent element’s width or height. Percentage units are often useful to set the width of margins, as an example.
+
+
+15. When should we use px, em, rem, %, and VH/VW?
+
+- COLUMNS WIDTHS: columns widths only work well and responsively when using percentages.
+- MARGINGS: PX or %, but % is preferable  to ensure the margins don’t get larger than the content when scaling down for a mobile device for instance. By using a percentage of the width of the device, your margins will remain relative to the size of the content, which is almost always preferable.
+- PADDING: PX, EM, or %. As with margins, it is often preferable to use EM or % so the padding remains relative as the size of the page scales.
+FONT-SIZE: Rem is preferable, but px, em, and even vh are used. 
+
+
