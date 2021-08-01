@@ -80,3 +80,25 @@ Another use of the :focus pseudo class is "tabbing" through elements. Many brows
 
 <textarea tabindex="-1">I can't be tabbed to. This is a terrible idea, generally, but it can be done using tabindex="-1". Notice that (if you click) I still have a focus state, even though you can't tab to me.</textarea>
 
+4. What is overflow in CSS?
+
+The overflow property controls what happens to content that breaks outside ofits bounds: imagine a div in which you've explicitly set to be 200px wide, but contains an image that is 300px wide. That image will stick out of the div and be visible by default. Whereas if you set the overflow value to hidden, the image will cut off at 200px.
+
+div {
+  overflow:  visible | hidden | scroll | auto | inherit
+}
+
+visible: content is not clipped when it proceeds outside its box. This is the default value of the property
+
+hidden: overflowing content will be hidden.
+
+scroll: similar to hidden except users will be able to scroll through the hidden content
+
+auto: if the content proceeds outside its box then that content will be hidden whilst a scroll bar should be visible for users to read the rest of the content.
+
+initial: uses the default value which is visible
+
+inherit: sets the overflow to the value of its parent element.
+
+Remember that text will naturally wrap at the end of an element (unless white-space is changed) so text will rarely be the cause of overflow. Unless a height is set, text will just push an element taller as well. Overflow comes into play more commonly when explicit widths and heights are set and it would be undesirable for any content to spill out, or when scrolling is explicitly being avoided.
+
