@@ -102,3 +102,17 @@ inherit: sets the overflow to the value of its parent element.
 
 Remember that text will naturally wrap at the end of an element (unless white-space is changed) so text will rarely be the cause of overflow. Unless a height is set, text will just push an element taller as well. Overflow comes into play more commonly when explicit widths and heights are set and it would be undesirable for any content to spill out, or when scrolling is explicitly being avoided.
 
+5. Can we use overflow vertically and horizontally?
+
+Yes, we can use overflow with the overflow-x and overflow-y properties. 
+
+.box {
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+
+6. Why one of the more popular uses of setting overflow is float clearing? Does it make any sense?
+
+Setting overflow doesn’t clear the float at the element, it self-clears. This means that the element with overflow (any value except visible) will extend as large as it needs to encompass child elements inside that are floated (instead of collapsing), assuming that the height isn’t declared.
+
+A better float clearing technique is the CLEARFIX, as it doesn’t require you to alter the overflow property in a way you don’t need.
