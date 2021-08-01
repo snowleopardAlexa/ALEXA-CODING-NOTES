@@ -1,0 +1,73 @@
+1. What should you consider while building forms?
+
+- What difficulties might someone with visual impairments have?
+- Is there a clear indication of what data is expected for input?
+- Is the form easy to understand quickly?
+- Can a keyboard be used to complete the form?
+
+2. What is accessibility?
+
+Accessibility is more about how people have the ability to access something, not use. 
+
+3. What type of disabilities might people have that will impact their ability to use your website?
+
+- Cognitive disability 
+- Hearing impairment (using speech input)
+- Physical disability
+- Visual impairments 
+
+4. How to make web forms more accessible?
+
+- make it keyboard accessible
+- add contrasting colors
+- use labels with form fields and inputs
+- flag errors: make msgs clear and concise
+- use reminder text with labels
+
+5. What is WCAG?
+
+It is a quick reference to accessibility while building websites.
+
+6. Why it is important to write forms carefully?
+
+Web forms can be difficult to complete even without any impairments, those with disabilities find web forms especially challenging to use.
+Ensure the widest accessible experience for all your users. 
+
+7. What is ARIA?
+
+ARIA - ACCESSIBLE RICH INTERNET APPLICATIONS, defines a way to make web content and 
+web applications ore accessible to people with disabilities. 
+
+8. What are ARIA ROLES?
+
+ARIA ROLES are added to HTML markup like an attribute. They define the type of element
+and suggest what purpose it serves.
+
+<div role="form" aria-labelledby="contact" id="contact">
+<fieldset>
+   <legend>Contact</legend>
+   <label for="name">Name:</label>
+   <input type="text" name="name" id="name">
+</fieldset>
+</div>   
+
+9. What are ARIA Attributes?
+
+All ARIA attributes are prefixed with aria-. There are two types of attributes, states and 
+properties.
+
+- the value of states will inevitably change as a result of user interaction
+- the value of properties is less likely to change
+
+10. What are the rules of ARIA?
+
+- use native HTML whenever possible
+- do not change native HTML semantics
+- ARIA controls must be keyboard accessible
+- for all elements that are focusable, do not ever add role="presentation"
+or aria-hidden="true"
+- give all interactive elements an accessible name
+
+11. 
+
+

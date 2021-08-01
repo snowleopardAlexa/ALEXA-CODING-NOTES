@@ -1,0 +1,51 @@
+1. What are HTML Validation Attributes?
+
+- required
+- minlength and maxlength
+- min and max
+- types, such as number, tel, email, url
+- pattern
+
+2. What is client-side form validation?
+
+Before submitting data to the server, it is important to ensure all required 
+form controls are filled out and in the correct format.
+
+
+3. What is better: CSS validation or JS validation?
+
+By using JavaScript, users input can be validated as they type, and we can control feedback as the user interacts with our form field. This means a more responsive, visually rich validation
+
+Using CSS, we have access to four states of a form input with pseudo-classes. Valid, invalid, required and optional. We can use these states to provide some, albeit limited feedback for users as they fill out the form. If you are creative with your CSS, however, you can actually make them look and function pretty darn well. Using valid and invalid, we can let users know in real time if their input satisfies all the necessary requirements.
+
+4. How to write good error messages?
+
+- clear text messages
+- right placement
+- good visual design
+- make your error message helpful: 
+  it's not enough to write that something went wrong
+  show users exactly how to fix the problem
+- error messages should be specific to the situation:
+  don't use the same error message for all validation states
+  show your users actual custom messages instead of general ones
+- error messages should be polite
+  don't blame your users that they did something wrong 
+  be polite to your users
+  make them feel comfortable and blame-free
+- use humor when appropriate
+  the error message should be informative and helpful 
+  when appropriate, you can improve user experience by adding some humor in your error message
+- the right place for error messages
+  a good error message is one that you can see when needed
+  place error messages next to the UI elements they are related to
+- the right visual design
+  should be clearly visible
+  use contrast text and background colors
+  use RED color
+  provide a related icon to improve accessibility for the people who can't see colors
+
+5. What is success page?
+
+Every form submission is a bridge of communication between you and your future customer.
+Communicate, inform the client about the purchase: Tnak you page. 
