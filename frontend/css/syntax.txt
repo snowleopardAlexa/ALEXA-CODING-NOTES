@@ -64,5 +64,19 @@ textarea:focus {
 
 Any element (most commonly <input>s and <textarea>s) are in “focus” when they are selected and ready to enter text (like when a cursor is blinking). Mouse users can click them (or their related label) to focus, and keyboard users can TAB into them.
 
+3. What is "tabbing" in CSS?
 
+Another use of the :focus pseudo class is "tabbing" through elements. Many browsers have a default focus state tab selection, which is dotted outline. It is easy to remove it, but make sure to replace it with an alternative. 
+
+<a>s, <button>s, <input>s, and textareas all have the :focus state by default, but you can give a focus state to any element in HTML. Both the contenteditable and tabindex attributes work for this:
+
+<textarea tabindex="1">A textarea. Focus states work by default.</textarea>
+
+<button tabindex="2">And I'm a button. Again, works by default.</button>
+
+<div contenteditable tabindex="3">Divs don't usually have a focus state. But I'm special, because I'm <code>contenteditable</code>.</div>
+
+<div tabindex="4">I'm another div, and I have a <code>tabindex</code>. You can't edit me like the div above, but you can tab to me.</div>
+
+<textarea tabindex="-1">I can't be tabbed to. This is a terrible idea, generally, but it can be done using tabindex="-1". Notice that (if you click) I still have a focus state, even though you can't tab to me.</textarea>
 
