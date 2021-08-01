@@ -92,7 +92,7 @@ The width of the div gets defined by its own font-size, instead of the html tag'
 
 Imagine the situation where a child sets the font-size to em and the parent of that child sets the font-size to 0.5em. This can get messy quickly. Imagine the situation where multiple elements are nested, all defining a font-size in em. 
 
-When using this solution to define sizes, the same problem occurs as when using pixels. It doesn't rspect the browser settings because we hard-coded the font-size of 10px on the html element. 
+When using this solution to define sizes, the same problem occurs as when using pixels. It doesn't respect the browser settings because we hard-coded the font-size of 10px on the html element. 
 
 SOLVE THE PROBLEM: 
 
