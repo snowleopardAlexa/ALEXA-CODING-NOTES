@@ -116,3 +116,42 @@ Yes, we can use overflow with the overflow-x and overflow-y properties.
 Setting overflow doesn’t clear the float at the element, it self-clears. This means that the element with overflow (any value except visible) will extend as large as it needs to encompass child elements inside that are floated (instead of collapsing), assuming that the height isn’t declared.
 
 A better float clearing technique is the CLEARFIX, as it doesn’t require you to alter the overflow property in a way you don’t need.
+
+7. How to generate block formatting context with CSS overflow?
+
+A block formatting context is a part of a visual CSS rendering of a web page. It's the region in which the layout of block boxes occurs and in which floats interact with other elements.
+
+A block formatting context is created by at least one of the following:
+
+The root element of the document (<html>).
+Floats (elements where float isn't none).
+Absolutely positioned elements (elements where position is absolute or fixed).
+Inline-blocks (elements with display: inline-block).
+Table cells (elements with display: table-cell, which is the default for HTML table cells).
+Table captions (elements with display: table-caption, which is the default for HTML table captions).
+Anonymous table cells implicitly created by the elements with display: table, table-row, table-row-group, table-header-group, table-footer-group (which is the default for HTML tables, table rows, table bodies, table headers, and table footers, respectively), or inline-table.
+Block elements where overflow has a value other than visible and clip.
+display: flow-root.
+Elements with contain: layout, content, or paint.
+Flex items (direct children of the element with display: flex or inline-flex) if they are neither flex nor grid nor table containers themselves.
+Grid items (direct children of the element with display: grid or inline-grid) if they are neither flex nor grid nor table containers themselves.
+Multicol containers (elements where column-count or column-width isn't auto, including elements with column-count: 1).
+column-span: all should always create a new formatting context, even when the column-span: all element isn't contained by a multicol container (Spec change, Chrome bug).
+Formatting contexts affect layout, but typically, we create a new block formatting context for the positioning and clearing floats rather than changing the layout, because an element that establishes a new block formatting context will:
+
+contain internal floats.
+exclude external floats.
+suppress margin collapsing.
+
+
+8. Can scrollbars be styled with CSS?
+
+You used to be able to style scrollbars in IE (v5.5?) but no more. You can style them now again in WebKit browsers. If you need cross-browser custom scrollbars, look to JavaScript.
+
+If an element needs to have scrollbars appended to honor the overflow value, Firefox puts them outside the element, keeping the visible width/height as declared. IE puts the scrollbars inside, keeping the overall width/height as declared.
+
+
+9.  
+
+
+
