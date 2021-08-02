@@ -151,7 +151,90 @@ You used to be able to style scrollbars in IE (v5.5?) but no more. You can style
 If an element needs to have scrollbars appended to honor the overflow value, Firefox puts them outside the element, keeping the visible width/height as declared. IE puts the scrollbars inside, keeping the overall width/height as declared.
 
 
-9.  
+9. What is WebKit?
+
+WebKit is a browser engine developed by Apple and primarily used in its Safari web browser, as well as all iOS web browsers.
+
+10. What are the vendor prefixes: -moz, -ms, -o, -webkit?
+
+-moz : Mozilla Firefox
+-ms: Microsoft Internet Explorer
+-o: Opera
+-webkit: Google Chrome and Apple Safari
+
+It's always a good approach to use all the vendor prefixes for the css you're applying, in order to address to the browser compatibility of the webpage you're developing. However, css preprocessors like LESS can handle this thing!!!
+
+11. What is calc() function in CSS?
+
+CSS has a special calc() function for doing basic math. 
+
+.main-content {
+  /* Subtract 80px from 100vh */
+  height: calc(100vh - 80px);
+}
+
+
+
+12. What is basic CSS terminology?
+
+.myclass p {
+    font-size: 2rem;
+    line-spacing: 2;
+}
+
+myclass -element
+.myclass - selector
+p - descendant selector
+font-size - property
+2rem - value
+
+font-size: 2rem;
+line-spacing: 2; --> block
+
+
+13. What are simple selectors in CSS?
+
+- elements
+- classes
+- IDs
+
+The element selector means that our selector is some type of HTML element. Paragraphs, articles, sections, footers, headers, headings, lists, links, and so much more. We simply type in the name of the element and that is the selector for it. Element selectors are the least specific in the CSS cascade. That makes elements a great choice for writing generic code that should govern the style for most of your webpage, using other selectors to override these default values.
+
+<article>...</article>
+
+article {
+    font-size: 2rem;
+    line-spacing: 2;
+}
+
+. A class is a style that can be used in many different cases on the same webpage. It's more specific than an element, meaning that it can override an element styling easily. Classes always start with a period in your style sheet and they are called via the attribute of class in your HTML.
+
+<div class="articleZionPark>...</div>
+
+.articleZionPark {
+    font-size: 2rem;
+    line-spacing: 2;
+}
+
+. An ID is a style that can be used once per page only. It is the most specific of all of the simple selectors, potentially overriding styling set by classes and elements. Unfortunately, since an ID is an identifier, it can only be used once per page on your website. If you need to reuse your styling, you'll want to use an element or a class to do so. IDs always start with a hashtag or a pound sign in your style sheet and they are called via the attribute of ID in your HTML.
+
+<div id="entireForm>...<//div>
+
+#entireForm {
+    font-size: 2rem;
+    line-spacing: 2; 
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
