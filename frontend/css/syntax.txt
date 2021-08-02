@@ -226,6 +226,54 @@ article {
 }
 
 
+14. What are groups of selectors?
+
+These are selectors that are separated by commas, but with only one set of styles.
+You can mix the selector types.
+
+h1, h2, h3 {
+    color: red;
+    font-family: 'Roboto';
+}
+
+A common mistake made when working with group selectors is to assume that the styling carries through to other elements in the group. 
+
+<p class="warning"><a href="#">Read more</a>about specific warnings.</p>
+
+.warning a:link, a:visited {
+   font-weight: bold;
+    color: white; 
+}
+
+To include just those links in visited or unvisited states descended from a class of warning, you'll need to restate the warning class each time. Remember that each selector is evaluated independently in between the commas.
+
+.warning a:link, .warning a:visited {
+    font-weight: bold;
+    color: white;
+}
+
+15. What is compound selector?
+
+<p class="myclass">Lorem</p>
+<ul class="myclass">
+   <li>one</li>
+   <li>two</li>
+   <li>three</li>
+</ul>   
+
+p.myclass {
+    color: blue;
+}
+
+ul.myclass {
+    color: yellow;
+}
+
+A compound selector is an element + descendant selector. The selector .myclass would make ul list and p paragraph the same colors, that's why if we want to assign different colors to them, we need to put element before .myclass.
+
+
+
+
 
 
 
