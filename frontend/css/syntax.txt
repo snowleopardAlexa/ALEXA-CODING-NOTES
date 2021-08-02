@@ -188,8 +188,10 @@ p - descendant selector
 font-size - property
 2rem - value
 
+font-size: 2rem --> declaration
+
 font-size: 2rem;
-line-spacing: 2; --> block
+line-spacing: 2; --> declaration block
 
 
 13. What are simple selectors in CSS?
@@ -270,6 +272,43 @@ ul.myclass {
 }
 
 A compound selector is an element + descendant selector. The selector .myclass would make ul list and p paragraph the same colors, that's why if we want to assign different colors to them, we need to put element before .myclass.
+
+16. What is the correct HTML for the following selector?
+ 
+article.col-1.col-end
+
+<article class="col-1 col-end">...</article>
+Feedback
+
+Correct, apply all classes in a single class attribute. Since there are no spaces in this selector, the two classes both apply to the same "article" element.
+
+
+17. Describe what this selector selects:
+ 
+.primary-color a, a:hover 
+
+Selects any a element that is a descendant of any element with a class of primary-color, or any a element which is in a hover state.
+
+18. What does this selector select?
+ 
+#warning, .danger, article 
+
+selects any element with an id attribute of warning, or any element with a class of danger, or any article element
+
+
+19. Which two terms can be used interchangeably in CSS?
+
+property-value pair declaration
+Feedback
+
+A property-value pair and declaration are interchangeable terms.
+
+
+20. What is a declaration in CSS?
+
+A declaration is a single property-value pair within a declaration block, the group of styles between the curly brackets.
+
+
 
 
 
