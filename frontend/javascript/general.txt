@@ -148,3 +148,51 @@ We can change the properties of the object inside the container. We can't remove
 
 new
 
+17. What is the constant in JS?
+
+ES6 provides a new way of declaring a constant by using the const keyword. The const keyword creates a read-only reference to a value. However, variables created by the const keyword are immutable. In other words, you can't reassign them to different values.
+
+18. What are the object properties?
+
+const backpack = {
+name: "Coma", <--> properties
+volume: 45,
+color: "Red"
+}
+
+Properties of objects are separated by comma, and named with camelCase. Properties can be changed, added, and deleted, but some are read-only. All properties have a name and a value. The value is one of the properties attributes. In JS all attributes can be read, but only the value attribute can be changed, only if the property is writeable.
+
+19. What is the example of nested objects in JS? Write the code. 
+
+Values in an object can be another object.
+You can access nested objects using the dot notation or the bracket notation:
+
+myObj = {
+  name: "Alexa",
+  age: 34,
+  cars: {
+    car1: "Ford",
+    car2: "BMW",
+    car3: "Fiat"
+  }
+}
+
+myObj.cars.car2;
+
+20. What are nested arrays and objects? Write an example code.
+
+const myObj = {
+   name: "Alexa",
+   age: 45,
+   cars: [
+        {name: "Ford", "models":["BMW", "Focus", "Mustang"]},
+        {name: "BMW", "models":["320", "x3", "x5"]},
+        {name: "Ferrari", "models":["546", "ak345", "Mu678"]},
+  ]
+}
+
+21. How to access the objects in JS?
+
+Anytime you want to access an object or anything else contained inside a variable you simply call it by its name and JavaScript will hand it to you. JavaScript has a series of console methods for this purpose. And the most common one is called console log. 
+
+console.log(backpack);
