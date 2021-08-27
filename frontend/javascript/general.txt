@@ -413,4 +413,128 @@ The example above uses the Car class to create two Car objects.
 
 The constructor method is called automatically when a new object is created.
 
-31. 
+31. What is the constructor method?
+
+The constructor method is a special method:
+
+- It has to have the exact name "constructor"
+- It is executed automatically when a new object is created
+- It is used to initialize object properties
+- If you do not define a constructor method, JavaScript will add an empty constructor method.
+
+32. What is a class method in JS?
+
+Class methods are created with the same syntax as object methods. Use the keyword class to create a class.
+
+Always add a constructor() method. Then add any number of methods.
+
+class ClassName {
+  constructor() { ... }
+  method_1() { ... }
+  method_2() { ... }
+  method_3() { ... }
+}
+
+Create a Class method named "age", that returns the Car age:
+
+class Car {
+  constructor(name, year) {
+    this.name = name;
+    this.year = year;
+  }
+  age() {
+    let date = new Date();
+    return date.getFullYear() - this.year;
+  }
+}
+
+let myCar = new Car("Ford", 2014);
+document.getElementById("demo").innerHTML =
+"My car is " + myCar.age() + " years old.";
+
+33. What are the global objects in JS?
+
+The global object in JavaScript is an always defined object that provides variables and functions, and is available anywhere. In a web browser, the global object is the window object, while it is named global in Node. js. The global object can be accessed using the this operator in the global scope.
+
+In addition to the objects you build yourself, either directly or through a class or a constructor, the browser has a long list of default objects you can use for a variety of different purposes. A full list of all of these global objects it's available and extensively documented in the MDN Web Docs. These global objects work exactly like the object we've seen so far except, we don't need to define them, they're just available through the browser, and for the most part we interact with them through their methods. --> STANDARD BUILT-IN OBJECTS.
+
+34. Compare template literals with traditional strings, and explain which one are better to use.
+
+Traditional strings
+
+// ES5 String 
+var string = "Hello Alexa";
+// ES5 string concatenation
+const dog = 'Fluffy';
+console log('my dog' + dog + ', is a great pet!)
+
+We use + --> it's cumbersome
+Strings are immutable, they can't be altered and whe attempting to add one string to the other, a new one is created. This applies to all of the ways of concatenating strings.
+
+Template Literals
+Introduced in ES6
+
+const dog = 'Fluffy;
+console.log(`mY DOG, ${dog}, is a great pet!`)
+
+It looks clean and straightforward.
+
+If you ever need to put a back-tick into the string, you need to escape it: to do this, put a backslash before the backtick.
+
+console.log(`Back-tick: ``); // Back-tick: `
+
+A noteworthy aspect of using template literals are multi-line strings. If you press enter in the middle of a template literal, you insert a newline character.
+
+const pets = `Dog: Fluffy
+Cat: Garfield`;
+ 
+console.log(pets);
+// Dog: Fluffy
+// Cat: Garfield
+
+To achieve the same output without template strings, you need to insert newline characters manually:
+
+const pets = 'Dog: Fluffy\nCat: Garfield';
+ 
+console.log(pets);
+// Dog: Fluffy
+// Cat: Garfield
+
+Hitting enter in a regular string causes Uncaught SyntaxError: Invalid or unexpected token and to prevent it, you need to escape newlines.
+
+const pets = 'Dog: Fluffy\
+Cat: Garfield';
+This does not insert newline characters though and you still need to add it manually.
+
+35. What is DOM and what is its role?
+
+The Document Object Model (DOM) is an application programming interface (API) for valid HTML and well-formed XML documents. It defines the logical structure of documents and the way a document is accessed and manipulated. ... The DOM is designed to be used with any programming language.
+
+The DOM is known as Document object model and it allows the accessing of the documents like HTML and XML. - It allows a platform to be language neutral and provide an interface that allows the dynamic usage of the scripts and programs to access the content.
+
+36. What are the DOM methods in JS?
+
+The HTML DOM can be accessed with JavaScript (and with other programming languages).
+
+In the DOM, all HTML elements are defined as objects. The programming interface is the properties and methods of each object. A property is a value that you can get or set (like changing the content of an HTML element).
+A method is an action you can do (like add or deleting an HTML element).
+
+<html>
+<body>
+<p id="demo"></p>
+<script>
+document.getElementById("demo").innerHTML = "Hello World!";
+</script>
+</body>
+</html>
+
+In the example above, getElementById is a method, while innerHTML is a property.
+
+37. What is the most common way to access an HTML element?
+
+- getElementById method
+- innerHTML property
+
+The easiest way to get the content of an element is by using the innerHTML property.
+The innerHTML property is useful for getting or replacing the content of HTML elements.
+The innerHTML property can be used to get or change any HTML element, including <html> and <body>.
