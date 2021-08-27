@@ -1331,3 +1331,58 @@ if (number <= 9) {
 const myFunction = (data) => {
    console.log(data);
 };
+
+94. True or false: An arrow function can be used to define an object method.
+
+FALSE
+
+95. What is logged in the console when this script executes?
+ 
+const myFunction = (data) => {
+   return;
+   let newData = data + 1;
+   return newData;
+}
+
+console.log(myFunction(5));
+
+Nothing (undefined)
+
+When the `return` statement is encountered, the function ends. In this example, the `return` statement is the first entry in the function, so nothing else executes.
+
+96. What happens when you assign values to parameters in a function declaration as exemplified below:
+ 
+const myFunction = (data = 5, color = "red") => {}
+
+Default values are created for each parameter. If no value is passed to the function, these values are used.
+
+97. What will the following script print?
+ 
+ function myfunc(x,y) {
+  return(x+y);
+ }
+ console.log(myfunc(2,myfunc(5,-2)));
+
+5
+
+98. Which answer is a valid example of calling the function expression defined below?
+ 
+const myFunction = function(a) {};
+
+myFunction(1);
+
+99. What is the difference between a function expression and a function declaration?
+
+A function declaration defines a function with the specified parameters starting with the function keyword. A function expression expresses a function inside a variable by assigning the function to the variable.
+
+100. An event listener can be appended to the window object?
+
+TRUE
+
+Event listeners are often used to listen for when the document is fully loaded in the browser. For this and other window events, we append an event listener to the window object.
+
+101. What goes in place of a and b in this standard event listener?
+
+element.addEventListener("__a__", "__b__");
+
+a: the event name b: the function to call when the event fires
