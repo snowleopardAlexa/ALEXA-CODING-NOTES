@@ -1,0 +1,96 @@
+1. What is JSX?
+
+A syntax extension of JavaScript created for the React JS framework. JSX is an XML/HTML-like syntax used by React that extends ECMAScript so that XML/HTML-like text can co-exist with JavaScript/React code. Unlike the past, instead of putting JavaScript into HTML, JSX allows us to put HTML into JavaScript.
+
+2. How to navigate Javascript landscape? What technologies are related to JS?
+
+- Vanilla JavaScript
+- ES2015
+- Babel
+- React
+- Vue.js
+- ECMAScript
+- CoffeeScript
+- JSX
+- TypeScript
+- Angular
+- ES6
+- Node.js
+- Gulp
+- WebPack 
+
+JS is constantly evolving. 
+
+3. What is the Morten's incomplete guide to navigation the JS landscape?
+
+- JavaScript: the core language; sometimes referred to as vanilla JS or VanillaJS
+- ECMAScript: the browser specification of the JS language. It is not the language itself, but official description how the JS should behave. 
+- ES6, ES2015, ES2017, Etc: refers to the use of features defined in ECMAScript, but not necessarly supported by modern browsers. --> Using ECMAScript usually means also using Babel.js to make it work in current browser implementations. 
+- TypeScript: variation, dialect, or flavor of JS introducing features like strong typing. --> .ts
+- React, Vue, Angular: JS frameworks allowsing us to write JS-based front-end applications.
+--> introduce new coding conventions like JSX, and reliance on tools like Babel, WebPack, and Node.js.
+- npm, WebPack, Gulp: build tools and infrastructure to automate the process of optimizing human-readable JS for the best browser perfromance.
+- Node.js: JS server runtime used to run JS everywhere; used to run npm, WebPack, Babel, and more on your computer. 
+
+4. What are the best tools from VSC to format and lint the code?
+
+- Prettier helps automatically clean up your formatting
+- ESLint helps automatically detect coding errors and can do basic cleanup automatically
+- Both require Node.js
+
+5. Why do you place JS at the beginning in the html document and why sometimes you put it at the end of the html document?
+
+We place JS at the beginning of the html <script>...</script> in the head section, but in many cases, JS is also placed at the end. The code is read from the top to the bottom and once it encounters JS in the head, it will stop reading the code and it means that it will slow down rendering of the other elements. We place JS at the end of the html if it applies to the element that must be rendered before JS will work on it. 
+
+6. What are the benefits of using external JS in the html? How to write the external JS in the head?
+
+<script src="script.js></script>
+
+BENEFITS:
+- Separating HTML and JavaScript code will help manage the code base better
+- Designers can work along with coders parallel without code conflicts
+- Works well with modern source code version control systems such as GIT and SVN.
+- Each of these files will maintain history
+- Can be checked in, checked out by multiple programmers.
+- Code as well as HTML is easily readable
+- External JavaScript files are cached by browsers and can speed up page load times
+With these small js files, you can use Google closure or YUI Compressor or other minifying tools to reduce the size and make it not readable by humans.
+- Many popular JavaScript packages are available as hosted on content delivery networks (cdn) and you can simply point to them using the URL in the src, thus avoiding copying the js file to local folder.
+- Take advantage of advanced tools such as CommonJS or RequireJS to load these scripts logically and modularly.
+
+7. What are the cons of JS external?
+
+- The browser has to make an extra http request to get the js code.
+- Code can be downloaded using the url of the js file. This can help coders to steal your code easily.
+- Dependency: If script1.js relies on script2.js and for some reason the script1.js download fails, then your application will break/crash, though the chances of this happening is very slim.
+- Order of these includes must be maintained, otherwise you get into scope errors.
+A small change to a common js file may cause unexpected results in some of the HTML files that use this js. Example, if you add document.load() in a common js since a certain HTML1 that uses this common js needs it, that may fix the issue in HTML1 but what about the other HTML files which also happen to include the same js?
+- When many HTML pages are using a common js file, you need to be extra careful to change the common js. You will need to test all the HTML files that depend on this common js, every time you make a change to the js file.
+
+8. What are the cons of JS external?
+
+- The browser has to make an extra http request to get the js code.
+- Code can be downloaded using the url of the js file. This can help coders to steal your code easily.
+- Dependency: If script1.js relies on script2.js and for some reason the script1.js download fails, then your application will break/crash, though the chances of this happening is very slim.
+- Order of these includes must be maintained, otherwise you get into scope errors.
+A small change to a common js file may cause unexpected results in some of the HTML files that use this js. Example, if you add document.load() in a common js since a certain HTML1 that uses this common js needs it, that may fix the issue in HTML1 but what about the other HTML files which also happen to include the same js?
+- When many HTML pages are using a common js file, you need to be extra careful to change the common js. You will need to test all the HTML files that depend on this common js, every time you make a change to the js file.
+
+9. Is moving the script tag to the bottom of html a good practice?
+
+No, it is not.  The traditional solution to this problem is to simply move, the script tag to the end of the document, so the browser only encounters it, when it's rendered everything else. This is not a solution though, this is a hack, and it introduces a whole range of other problems, there's a good chance you have JavaScript that should run at the beginning, or should happen, while the document is being loaded. And doing it this way, would mean you have to just split up the JavaScript depending on what it's doing, and then place some of it at the top, and some on the bottom. It's a really imprecise and hacky way of doing it, and it doesn't really work all that well. For this reason, we now have new tools in JavaScript to tightly control how, and when JavaScript is loaded.
+
+10. What are the async and defer in JS and what is their role in loading JS in the browser?
+
+<script src="js/script.js" async></script>
+
+HTML PARSING --> JS download --> JS execution 
+--> HTML parsing
+
+The async keyword changes this behavior significantly. It tells the browser, 'Hey, when you encounter a JavaScript file, keep parsing the HTML while you download the JavaScript file, and only stop the parsing when you actually have the file, then execute whatever's in the JavaScript file, and then continue HTML parsing.' This dramatically shortens the time it takes for the browser to execute everything. And it doesn't, create this huge render blocking issue. There's still a hole in the rendering, but it's much shorter. This is good for some purposes, especially when you need, to get the JavaScript to parse as quickly as possible, and you don't really care about render blocking. But in our circumstance, we need to make sure the browser, only executes the JavaScript, after the document is complete. 
+
+The defer keyword tells the browser, 'parse your HTML and if you encounter JavaScript, just load it alongside your HTML parsing. Then when the HTML parsing is complete, execute whatever JavaScript you have.' So this is exactly what we want for our purposes. That means, I can go back to my script, and then at the end of my script tag, just add defer, save the file, and in the browser, everything is now working properly, because we are literally deferring the execution, off the script until, everything else has been rendered. Here's your takeaway. 
+
+Async and defer should be the standard way of loading JavaScript today. Only use render blocking, meaning ,either placing the script tag without the async and defer keywords, or placing the, script tag at the bottom of the document, if you have a specific reason to do so. And trust me, I've asked around and tried to figure it out myself, I have yet to find a use case, where it makes sense, to not use async and defer. Loading JavaScript in the footer, is now an anti pattern. 
+
+From here on forward, JavaScript should always be loaded in the head, and then you use async or defer, to control when that JavaScript is executed on the document.
