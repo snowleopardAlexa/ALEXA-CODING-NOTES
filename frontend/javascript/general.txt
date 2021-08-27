@@ -1386,3 +1386,55 @@ Event listeners are often used to listen for when the document is fully loaded i
 element.addEventListener("__a__", "__b__");
 
 a: the event name b: the function to call when the event fires
+
+102. What does 'this' refer to in the following event listener definition?
+ 
+myElement.addEventListener(eventName, function(e) {
+    eventFunction(e,this);
+});
+
+The element in myElement
+
+103. Why does this return the window object in the following event listener definition?
+ 
+myElement.addEventListener(eventName, () => {
+    console.log(this);
+});
+
+Arrow functions do not have their own this, so they refer to the closest defined this which is the window object.
+
+104. Can a value be passed through an event listener to its callback function?
+
+Yes, by capturing the value in a new function inside the callback function.
+
+105. When is the resize event triggered?
+
+When the document view is resized.
+
+106. How do you capture the event object in an event listener?
+
+The event object is automatically passed as a parameter to the callback function. Simply name and use the parameter.
+
+107. If you create several event listeners listening to the same event, only the last one in the script will work.
+
+FALSE
+
+108. What is the first troubleshooting step when your JavaScript is not working as expected?
+
+Look for errors in the browser console.
+
+109. What is the keyboard shortcut to comment out one or more highlighted lines of code in the code editor?
+
+On Windows: Ctrl+/ On Mac: Cmd+/
+
+110. Given the code below, how do you access the property named in let propName? ``` let propName = "color";
+ 
+const myObject = { 
+ ID = 3,
+ color = "pink", 
+ propLength = 4, 
+ use = false 
+}
+
+Bracket notation:
+myObject[propName]
