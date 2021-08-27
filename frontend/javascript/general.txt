@@ -951,3 +951,258 @@ onclick="document.getElementById('id1').style.color = 'red'">
 Click Me!</button>
 </body>
 </html>
+
+60. Can we create animations with HTML DOM JS?
+
+To demonstrate how to create HTML animations with JavaScript, we will use a simple web page:
+
+<!DOCTYPE html>
+<html>
+<body>
+<h1>My First JavaScript Animation</h1>
+<div id="animation">My animation will go here</div>
+</body>
+</html>
+
+61. Describe HTML DOM Events.
+
+A JavaScript can be executed when an event occurs, like when a user clicks on an HTML element.
+
+To execute code when a user clicks on an element, add JavaScript code to an HTML event attribute:
+
+onclick=JavaScript
+
+Examples of HTML events:
+
+- When a user clicks the mouse
+- When a web page has loaded
+- When an image has been loaded
+- When the mouse moves over an element
+- When an input field is changed
+- When an HTML form is submitted
+- When a user strokes a key
+
+In this example, the content of the <h1> element is changed when a user clicks on it:
+
+<!DOCTYPE html>
+<html>
+<body>
+<h1 onclick="this.innerHTML = 'Ooops!'">Click on this text!</h1>
+</body>
+</html>
+
+In this example, a function is called from the event handler:
+<!DOCTYPE html>
+<html>
+<body>
+<h1 onclick="changeText(this)">Click on this text!</h1>
+<script>
+function changeText(id) {
+  id.innerHTML = "Ooops!";
+}
+</script>
+</body>
+</html>
+
+62. Describe DOM Event Listener. Describe the addEventListener() method.
+
+Add an event listener that fires when a user clicks a button:
+
+document.getElementById("myBtn").addEventListener("click", displayDate);
+
+The addEventListener() method attaches an event handler to the specified element.
+
+The addEventListener() method attaches an event handler to an element without overwriting existing event handlers.
+
+You can add many event handlers to one element.
+
+You can add many event handlers of the same type to one element, i.e two "click" events.
+
+You can add event listeners to any DOM object not only HTML elements. i.e the window object.
+
+The addEventListener() method makes it easier to control how the event reacts to bubbling.
+
+When using the addEventListener() method, the JavaScript is separated from the HTML markup, for better readability and allows you to add event listeners even when you do not control the HTML markup.
+
+You can easily remove an event listener by using the removeEventListener() method.
+
+element.addEventListener(event, function, useCapture);
+
+The first parameter is the type of the event (like "click" or "mousedown" or any other HTML DOM Event.)
+
+The second parameter is the function we want to call when the event occurs.
+
+The third parameter is a boolean value specifying whether to use event bubbling or event capturing. This parameter is optional.
+
+Note that you don't use the "on" prefix for the event; use "click" instead of "onclick".
+
+63. How to add Event Handler to and Element?
+
+Alert "Hello World!" when the user clicks on an element:
+
+element.addEventListener("click", function(){ alert("Hello World!"); });
+
+You can also refer to an external "named" function:
+
+Alert "Hello World!" when the user clicks on an element:
+
+element.addEventListener("click", myFunction);
+
+function myFunction() {
+  alert ("Hello World!");
+}
+
+64. How to add many event handlers to the same element?
+
+The addEventListener() method allows you to add many events to the same element, without overwriting existing events:
+
+element.addEventListener("click", myFunction);
+element.addEventListener("click", mySecondFunction);
+
+You can add events of different types to the same element:
+
+element.addEventListener("mouseover", myFunction);
+element.addEventListener("click", mySecondFunction);
+element.addEventListener("mouseout", myThirdFunction);
+
+65. How to add event handler to the window object?
+
+The addEventListener() method allows you to add event listeners on any HTML DOM object such as HTML elements, the HTML document, the window object, or other objects that support events, like the xmlHttpRequest object.
+
+Add an event listener that fires when a user resizes the window:
+
+window.addEventListener("resize", function(){
+  document.getElementById("demo").innerHTML = sometext;
+});
+
+66. How to pass parameters in HTML DOM JS?
+
+When passing parameter values, use an "anonymous function" that calls the specified function with the parameters:
+
+element.addEventListener("click", function(){ myFunction(p1, p2); });
+
+67. What is the difference between Event Bubbling or Event Capturing?
+
+There are two ways of event propagation in the HTML DOM, bubbling and capturing.
+
+Event propagation is a way of defining the element order when an event occurs. If you have a <p> element inside a <div> element, and the user clicks on the <p> element, which element's "click" event should be handled first?
+
+In bubbling the inner most element's event is handled first and then the outer: the <p> element's click event is handled first, then the <div> element's click event.
+
+In capturing the outer most element's event is handled first and then the inner: the <div> element's click event will be handled first, then the <p> element's click event.
+
+With the addEventListener() method you can specify the propagation type by using the "useCapture" parameter:
+
+addEventListener(event, function, useCapture);
+The default value is false, which will use the bubbling propagation, when the value is set to true, the event uses the capturing propagation.
+
+document.getElementById("myP").addEventListener("click", myFunction, true);
+document.getElementById("myDiv").addEventListener("click", myFunction, true);
+
+68. How does removeEventListener() method work?
+
+The removeEventListener() method removes event handlers that have been attached with the addEventListener() method:
+
+element.removeEventListener("mousemove", myFunction);
+
+69. What is let in JS?
+
+LET --> is now preferred for variable declaration. 
+
+LET IS BLOCK SCOPED:
+- A block is a chunk of code bounded by {}. A block lives in curly braces. Anything within curly braces is a block. 
+
+A variable delcared in a block with LET is only avialable for use within that block. 
+
+  let greeting = "say Hi";
+   let times = 4;
+
+   if (times > 3) {
+        let hello = "say Hello instead";
+        console.log(hello);// "say Hello instead"
+    }
+   console.log(hello) // hello is not defined
+
+We see that using hello outside its block (the curly braces where it was defined) returns an error. This is because let variables are block scoped .
+
+LET CAN BE UPDATED BUT NOT RE-DECLARED:
+Just like var,  a variable declared with let can be updated within its scope. Unlike var, a let variable cannot be re-declared within its scope. So while this will work:
+
+   let greeting = "say Hi";
+   greeting = "say Hello instead";
+
+this will return an error:
+ 
+   let greeting = "say Hi";
+   let greeting = "say Hello instead"; // error: Identifier 'greeting' has already been declared
+
+However, if the same variable is defined in different scopes, there will be no error:
+
+ let greeting = "say Hi";
+    if (true) {
+        let greeting = "say Hello instead";
+        console.log(greeting); // "say Hello instead"
+    }
+    console.log(greeting); // "say Hi"
+
+Why is there no error? This is because both instances are treated as different variables since they have different scopes.
+
+This fact makes let a better choice than var. When using let, you don't have to bother if you have used a name for a variable before as a variable exists only within its scope.
+
+Also, since a variable cannot be declared more than once within a scope, then the problem discussed earlier that occurs with var does not happen.
+
+HOISTING OF LET
+Just like  var, let declarations are hoisted to the top. Unlike var which is initialized as undefined, the let keyword is not initialized. So if you try to use a let variable before declaration, you'll get a Reference Error.
+
+70. What is const in JS?
+
+Variables declared with the const maintain constant values. const declarations share some similarities with let declarations.
+
+CONST DECLARATIONS ARE BLOCK SCOPED
+Like let declarations, const declarations can only be accessed within the block they were declared.
+
+CONST CANNOT BE UPDATED OR RE-DECLARED
+This means that the value of a variable declared with const remains the same within its scope. It cannot be updated or re-declared. So if we declare a variable with const, we can neither do this:
+
+ const greeting = "say Hi";
+    greeting = "say Hello instead";// error: Assignment to constant variable. 
+
+nor this:
+
+ const greeting = "say Hi";
+    const greeting = "say Hello instead";// error: Identifier 'greeting' has already been declared
+
+Every const declaration, therefore, must be initialized at the time of declaration.
+
+This behavior is somehow different when it comes to objects declared with const. While a const object cannot be updated, the properties of this objects can be updated. Therefore, if we declare a const object as this:
+
+  const greeting = {
+        message: "say Hi",
+        times: 4
+    }
+
+while we cannot do this:
+
+  greeting = {
+        words: "Hello",
+        number: "five"
+    } // error:  Assignment to constant variable.
+
+we can do this:
+
+  greeting.message = "say Hello instead";
+
+This will update the value of greeting.message without returning errors.
+
+HOISTING OF CONST
+
+Just like let, const declarations are hoisted to the top but are not initialized.
+
+So just in case you missed the differences, here they are:
+
+- var declarations are globally scoped or function scoped while let and const are block scoped.
+- var variables can be updated and re-declared within its scope; let variables can be updated but not re-declared; const variables can neither be updated nor re-declared.
+- They are all hoisted to the top of their scope. But while var variables are initialized with undefined, let and const variables are not initialized.
+- While var and let can be declared without being initialized, const must be initialized during declaration.
+
+71. 
