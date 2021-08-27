@@ -196,3 +196,221 @@ const myObj = {
 Anytime you want to access an object or anything else contained inside a variable you simply call it by its name and JavaScript will hand it to you. JavaScript has a series of console methods for this purpose. And the most common one is called console log. 
 
 console.log(backpack);
+
+22. Arrow functions vs. regular functions, which technique is better and when to use them?
+
+...
+
+23. How to troubleshoot JS?
+
+- using a browser - CONSOLE
+- using a browser - SOURCES
+- using a browser - DEBUGGER
+
+24. What are the 3 ways to access object properties?
+
+- DOT NOTATION: object.property
+- SQUARE BRACKET NOTATION: object['property']
+- OBJECT DESTRUCTURING: const {property} = object
+
+25. Explain the dot notation accessor of object property in JS, and its limitations.
+
+const hero {
+  name: 'Batman'
+  cars: {
+    blackCars: 5,
+    whiteCars: 2,
+  },
+};
+
+hero.name
+hero.cars.blackCars
+
+Choose the dot property accessor when the property name is known AHEAD OF TIME
+   
+Limitations:
+- It’s a lot easier to read
+- It’s way faster to type.
+BUT:
+- issue working with Identifiers
+- issue working with Variables
+
+An identifier is a sequence of characters in the code that identifies a variable, function, or property.
+
+const obj = {
+  123: 'digit',
+  123name: 'start with digit',
+  name123: 'does not start with digit',
+  $name: '$ sign',
+  name-123: 'hyphen',
+  NAME: 'upper case',
+  name: 'lower case'
+};
+
+obj.123;      // ❌ SyntaxError
+obj.123name;  // ❌ SyntaxError
+obj.name123;  // ✅ 'does not start with digit'
+obj.$name;    // ✅  '$ sign'
+obj.name-123;  // ❌ SyntaxError
+obj.'name-123';// ❌ SyntaxError
+obj.NAME; // ✅ 'upper case'
+obj.name; // ✅ 'lower case'
+
+26. Explain the bracket notation in accessing the object properties and its limitations.
+
+const obj = {
+  123: 'digit',
+  123name: 'start with digit',
+  name123: 'does not start with digit',
+  $name: '$ sign',
+  name-123: 'hyphen',
+  NAME: 'upper case',
+  name: 'lower case'
+};
+
+27. Explain object destructuring in JS and its limitations.
+
+const hero = {
+  name: 'Batman'
+};
+
+// Object destructuring:
+const { name } = hero;
+name; // => 'Batman'
+
+const { name } = hero is an object destructuring. The destructuring defines a variable name with the value of property name.
+
+When you get used to object destructuring, you will find that its syntax is a great way to extract the properties into variables.
+
+Choose the object destructuring when you’d like to create a variable having the property value.
+
+Note that you can extract as many properties as you’d like:
+
+const { identifier1, identifier2, .., identifierN } = expression;
+
+Alias variable
+
+If you’d like to access the property, but create a variable name different than the property name, you could use aliasing.
+
+const { identifier: aliasIdentifier } = expression;
+
+identifier is the name of the property to access, aliasIdentifier is the variable name, and expression should evaluate to an object. After the destructuring, the variable aliasIdentifier contains the property value.
+
+const hero = {
+  name: 'Batman'
+};
+
+// Object destructuring:
+const { name: heroName } = hero;
+heroName; // => 'Batman'
+const { name: heroName } = hero is an object destructuring. The destucturing defines a new variable heroName (instead of name as in previous example), and assigns to heroName the value hero.name.
+
+Dynamic property name
+
+What makes the object destructuring even more useful is that you could extract to variables properties with the dynamic value:
+
+const { [expression]: identifier } = expression;
+
+The first expression should evaluate to a property name, and the identifier should indicate the variable name created after the destructuring. The second expression should evaluate to the object you’d like to destructure.
+
+Here’s an example:
+
+const property = 'name';
+const hero = {
+  name: 'Batman'
+};
+
+// Object destructuring:
+const { [property]: name } = hero;
+name; // => 'Batman'
+const { [property]: name } = hero is an object destructuring that dynamically, at runtime, determines what property to extract.
+
+When the property doesn’t exist
+If the accessed property doesn’t exist, all 3 accessor syntaxes evalute to idefined:
+
+const hero = {
+  characterName: 'Batman'
+};
+
+hero.name;    // => undefined
+hero['name']; // => undefined
+const { name } = hero;
+name;         // => undefined
+
+The property name doesn’t exist in the object hero. Thus the dot property accessor hero.name, square brackets property accessor hero['name'] and the variable name after destructuring evaluate to undefined.
+
+28. What are JS object methods?
+
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  id: 5566,
+  fullName : function() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+
+// Display data from the object:
+document.getElementById("demo").innerHTML = person.fullName();
+
+JavaScript methods are actions that can be performed on objects. A JavaScript method is a property containing a function definition.
+Methods are functions stored as object properties.
+
+29. How to access object methods in JS?
+
+const handbag = {
+    name: "Anna Karenina",
+    volume: 20,
+    color: "red",
+    pocketNum: 3,
+    strapLength: {
+        left: 24,
+        right: 24,
+    },
+    lidOpen: false,
+    toggleLid: function (lidStatus) {
+        this.lidOpen = lidStatus;
+    },
+    newStrapLength: function (lengthLeft, lengthRight) {
+        this.strapLength.left = lengthLeft;
+        this.strapLength.right = lengthRight;
+    },
+};
+
+// how methods work
+console.log("The handbag object: ", handbag);
+console.log("The pocketNum value: ", handbag.pocketNum);
+
+console.log("Left before: ", handbag.strapLength.left);
+
+handbag.newStrapLength(23 , 34);
+console.log("Left after: ", handbag.strapLength.left);
+
+30. What are the classes in JS? How to use a class?
+
+ES6 introduced JS Classes. JS classes are templates for JS objects. 
+
+class Car {
+  constructor(name, year) {
+    this.name = name;
+    this.year = year;
+  }
+}
+
+Always add a method named constructor()
+
+A JavaScript class is not an object. It is a template for JavaScript objects.
+
+How to use a class:
+
+When you have a class, you can use the class to create objects:
+
+Example
+let myCar1 = new Car("Ford", 2014);
+let myCar2 = new Car("Audi", 2019);
+
+The example above uses the Car class to create two Car objects.
+
+The constructor method is called automatically when a new object is created.
+
+31. 
