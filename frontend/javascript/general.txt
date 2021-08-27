@@ -1438,3 +1438,89 @@ const myObject = {
 
 Bracket notation:
 myObject[propName]
+
+111. In the following object, what is the code in the second line called?
+ 
+const myObject = {
+    color: "pink"
+};
+
+An object property with a property name and a property value.
+
+112. Why is the best-practice to place objects inside constants?
+
+So the object isn't accidentally altered or overwritten.
+
+113. Which of the below object property names are not valid?
+ 
+const myObject = {
+    propName = "property",         // line 1
+    prop-name = "hyphenated",  // line 2
+    3rdProp = "numbered",          // line 3
+    $prop = "dollar",                      // line 4
+    %prop = "percentage",           // line 5
+    prop name = "space"              // line 6
+};
+
+Lines 2, 3, 5, and 6
+
+114. How do you access an object in JavaScript?
+
+Call the object by naming its container.
+
+115. Can an object created from a class be given the same name as the class?
+
+No: If the class is a constant, this will cause an error. If the class is not a constant, the new object will overwrite the class.
+
+116. How do you define an object in JavaScript?
+
+Create a variable, give it a name, and assign it an object using curly brackets:
+const myObject = {
+  // Properties and methods go here.
+};
+
+117. What does the this keyword refer to in a class?
+
+this refers to the current object created from the class.
+
+118. Where do you go to find official documentation and code examples for standard built in (global) objects?`
+
+The MDN Web Docs for standard built-in objects
+
+119. How do you create a new object from a class?
+
+Using the new keyword, naming the class, and passing the properties as parameters.
+
+120. What is one advantage to using a class over an object constructor method?
+
+Classes can be extended.
+
+121. What is the established convention for formatting objects?
+
+All properties and methods are listed on their own separate line.
+
+122. What is the difference between a function and a method?
+
+A function is a stand-alone function. A method is a function within an object.
+
+123. Can you use arrow functions to create object methods?
+
+No, object methods must be declared using function expressions or the method definition shorthand.
+
+124. When creating a class, the prototype methods are added inside the constructor method.
+
+FALSE
+
+Class prototype methods are added after the constructor method as discrete named methods.
+
+125. How do you declare a JavaScript expression inside a template literal?
+
+const myString = `Some text and an ${expression}.`;
+
+126. What does the following code output in the console?
+ 
+let number = 5;
+let subtracted = 5-1;
+console.log("The number before" + number + "is" + subtracted + ".");
+
+The number before5is4.
