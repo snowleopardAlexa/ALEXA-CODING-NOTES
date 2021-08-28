@@ -100,3 +100,89 @@ Style guides include documentation for brand identity, writing, voice, and tone,
 - WRITING: provide every author some guidelines for contributing content. 
 - CODE STYLE GUIDES: it's essential to writ legible, scalable, maintainable code. But without a way to promote and enforce code consistency, it's easy for things to fall apart and leave every develope to fend for themselves. 
 - PATTERN LIBRARIES: UI libraries, component libraries.
+
+14. What are the style guides benefits?
+
+- web style guides promote consistency and cohesion across a user interface. When a user is hit with 4 distinct UI on the web, it starts to be tired and worried that the web is not legitimate. --> style guides make the design united and trustworthy, which helps users accomplish their tasks faster and empowers them to master the interface. 
+- a shared vocabulary: style guides help to establish the shared vocab.
+- education: a pattern library communicates the design language in a very tangible way. 
+- an empathetic workflow: A good style guide helps inform designers and developers of the tools they have in their toolbox, and provides rules and best practices for how to use them properly. Designers and developers are forced to think about how their decisions affect the broader design system. 
+- testing: A style guide allows you to view interface patterns in isolation, allowing developers to zero in on what’s causing errors, browser inconsistencies, or performance issues.
+- speed: devising an interface design system and creating a custom pattern library initially takes a lot of time, thought, but once the pattern library is established, subsequent design and development becomes much faster, which tends to make everybody happy.
+
+15. What are the style guides challenges?
+
+- the hard sell: to benefit from style guides, organizations must first appropriate the necessary time and budget to make them happen. That requires organizations to overcome the short-term mentality that all too often creeps its way into company culture. The long-term benefits that style guides provide are obvious to those who are already thinking about the long game. The challenge, therefore, becomes convincing those stuck in a short-term, quarter-by-quarter mindset that establishing a thoughtful design system is a smart investment in the future.
+- a mattern of time: Perhaps the biggest, most unavoidable challenge is that style guides are time-consuming to create. Aggressive timelines and finite budgets detract from the effort required to make style guides happen, even when teams are committed to the cause.
+- auxiliary projects: pattern libraries are often treated as auxiliary projects, rather than as the component parts of the final product. By treating pattern libraries as something separate from the core project, they tend to fall into the nice to have category and become first on the chopping block when the going gets tough. 
+- maintenance and governance: A maintenance and governance strategy is critical to style guides’ success. Style guides will be thrown in the trash (right beside all those PSDs and wireframes) and abandoned without a proper strategy in place for who will manage, maintain, and enforce them.
+- audience confusion: Style guides can be misunderstood as tools useful only to designers or developers, which leads to a lack of visibility that immediately limits their effectiveness. Instead of serving as a watering hole for everyone in the organization, a style guide can become a best-kept secret guarded by one discipline.
+
+16. What is the style guides structure and its challenges?
+
+Style guides should be attractive, inviting, visible, clear, and easy to use.
+
+- lack of context: Context is key to understanding a design system. Unfortunately, most pattern libraries out in the wild don’t provide any hints as to when, how, and where their components get used. Without providing context, designers and developers don’t know how global a particular pattern is, and as a result wouldn’t know which pages of their app would need to be revisited, QA’d, and tested if changes were made.
+- lacking a clear methodology: a lack of structure.
+
+17. What is the atomic design? Explain the chemistry behind it.
+
+In the natural world, atomic elements combine together to form molecules. These molecules can combine further to form relatively complex organisms.
+
+- Atoms are the basic building blocks of all matter. Each chemical element has distinct properties, and they can’t be broken down further without losing their meaning. (Yes, it’s true atoms are composed of even smaller bits like protons, electrons, and neutrons, but atoms are the smallest functional unit.)
+- Molecules are groups of two or more atoms held together by chemical bonds. These combinations of atoms take on their own unique properties, and become more tangible and operational than atoms.
+- Organisms are assemblies of molecules functioning together as a unit. These relatively complex structures can range from single-celled organisms all the way up to incredibly sophisticated organisms like human beings.
+
+Atoms combine together to form Molecules, which further combine to form Organisms.
+
+18. What is the atomic design methodology? 
+
+Atomic design is a methodology composed of five distinct stages working together to create interface design systems in a more deliberate and hierarchical manner. The five stages of atomic design are:
+
+1. Atoms
+2. Molecules
+3. Organisms
+4. Templates
+5. Pages
+
+Atomic design is not a linear process, but rather a mental model to help us think of our user interfaces as both a cohesive whole and a collection of parts at the same time. Each of the five stages plays a key role in the hierarchy of our interface design systems.
+
+19. What are Atoms in the Atomic Design methodology?
+
+If atoms are the basic building blocks of matter, then the atoms of our interfaces serve as the foundational building blocks that comprise all our user interfaces. These atoms include basic HTML elements like form labels, inputs, buttons, and others that can’t be broken down any further without ceasing to be functional.
+
+Each atom in the natural world has its own unique properties.
+
+A hydrogen atom contains one electron, while a helium atom contains two. These intrinsic chemical properties have profound effects on their application (for example, the Hindenburg explosion was so catastrophic because the airship was filled with extremely flammable hydrogen gas versus inert helium gas). In the same manner, each interface atom has its own unique properties, such as the dimensions of a hero image, or the font size of a primary heading. These innate properties influence how each atom should be applied to the broader user interface system. In the context of a pattern library, atoms demonstrate all your base styles at a glance, which can be a helpful reference to keep coming back to as you develop and maintain your design system. But like atoms in the natural world, interface atoms don’t exist in a vacuum and only really come to life with application.
+
+20. What are the molecules in the atomic design methodology?
+
+In chemistry, molecules are groups of atoms bonded together that take on distinct new properties. For instance, water molecules and hydrogen peroxide molecules have their own unique properties and behave quite differently, even though they’re made up of the same atomic elements (hydrogen and oxygen).
+
+In interfaces, molecules are relatively simple groups of UI elements functioning together as a unit. For example, a form label, search input, and button can join together to create a search form molecule.
+
+When combined, these abstract atoms suddenly have purpose. The label atom now defines the input atom. Clicking the button atom now submits the form. The result is a simple, portable, reusable component that can be dropped in anywhere search functionality is needed.
+
+Now, assembling elements into simple functioning groups is something we’ve always done to construct user interfaces. But dedicating a stage in the atomic design methodology to these relatively simple components affords us a few key insights.
+
+Creating simple components helps UI designers and developers adhere to the single responsibility principle, an age-old computer science precept that encourages a “do one thing and do it well” mentality. Burdening a single pattern with too much complexity makes software unwieldy. Therefore, creating simple UI molecules makes testing easier, encourages reusability, and promotes consistency throughout the interface.
+
+21. What are the organisms in the atomic design?
+
+Organisms are relatively complex UI components composed of groups of molecules and/or atoms and/or other organisms. These organisms form distinct sections of an interface.
+
+The header forms a standalone section of an interface, even though it contains several smaller pieces of interface with their own unique properties and functionality.
+
+While some organisms might consist of different types of molecules, other organisms might consist of the same molecule repeated over and over again. For instance, visit a category page of almost any e-commerce website and you’ll see a listing of products displayed in some form of grid.
+
+Building up from molecules to more elaborate organisms provides designers and developers with an important sense of context. Organisms demonstrate those smaller, simpler components in action and serve as distinct patterns that can be used again and again. The product grid organism can be employed anywhere a group of products needs to be displayed, from category listings to search results to related products.
+
+Organisms can consist of similar or different molecule types. A header organism might consist of dissimilar elements such as a logo image, primary navigation list, and search form. We see these types of organisms on almost every website we visit.
+
+22. What is the modular design? What is separation of concerns? What is the single responsability principle? 
+
+The modular design is the design principle that subdivides a system into smaller parts called modules, which can be independently created, modified, replaced, or exchanged with other modules or between different systems. 
+
+The separation of concerns is a design principle for separating a code into distinct sections such that each section addresses a separate concern. A concern is a set of information that affects the code of a computer program. The overall goal is to establish a well-organized system where each part fulfills a meaningful and intuitive role while maximizing its ability to adapt to change. Modularity is the most common manifestation of separation of concerns. Software is divided inyo separately named and addressable components sometimes called modules, that are integrated to satisfy problem requirements. 
+
+The single responsability principle is a computer-programming principle that states that every module, class, or function in a computer program should have responsability over a single part of that program's functionality, and it should encapsulate that part.
