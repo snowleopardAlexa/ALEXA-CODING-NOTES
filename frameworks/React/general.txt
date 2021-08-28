@@ -167,4 +167,38 @@ function  App() {
      );
 }
 
-25. 
+25. What should be passed into the dependency array for useEffect, so it is called anytime the value changes?
+
+useEffect(() => {
+     if (!login) return;
+     setLoading(true);
+     fetch('https://api.github.com/users/${login}')
+          .then((response) => response.json())
+          .then(setData)
+          .then(() => setLoading(false))
+          .catch(setError);
+
+}.,   [login]);
+
+26. You want to use the data returned from the API to display your full name in a header. How should your code be set to achieve this?
+
+if (data) {
+     return (
+          <div>
+               <h1>{data.name}</h1>
+          </div>
+     );
+}
+
+27. Given the following URL, which code correctly displays the useEffect Hook being used to fetch the entire URL?
+ 
+https://api.github.com/users/firstlastname
+
+function App() {
+     const  [data, setData] = useState(null);
+
+     useEffect(() => {
+          fetch(`https://api.github.com/users/firstlastname`)
+     });
+     return <div></div>;
+}
