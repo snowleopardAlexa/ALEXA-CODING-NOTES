@@ -1,0 +1,170 @@
+1. What are the electros in React logo?
+
+- SSR
+- Routing and navigation
+- Types
+- State Management
+- Animation
+- Mobile
+- Testing and Debugging
+
+2. What is routing and navigation in React?
+
+Routing moves you to the other page, in the navigation menu usually. --> React Router.
+
+3. What is Server Side Rendering?
+
+SSR --> faster, SEO friendly, more secure --> ReactDOMServer. React app some are rendered on the server and some on the client, it can be done on both sides.
+
+4. What is state management?
+
+When you click on any links or button, a state changes. Managing different points in time or states in the app. --> events occur and state changes in the app --> ContextAPI, Redux, props drilling.
+
+5. Can React be used on mobile devices?
+
+Yes. React Native. 
+
+6. What is animation in React?
+
+Animation occurs when you click on something to enhance the user experience. --> transition, React-motion library.
+
+7. Explain Testing and Debugging.
+
+App development never goes smoothly -- Chrome, Jest, React Developer Tools.
+
+8. What is type checking in React?
+
+Type checking eliminates a lot of bugs. It checks if the data type was written correctly. --> propTypes, Flow.
+
+9. Which function would replace the ??? placeholders in the following code to create this React element?
+
+??? (
+     React.createElement("h1", null, "Heyyyyy Everyone!"),
+     document.getElementById("root")
+);
+
+-ReactDOM.render
+
+10. If you run npx create-react-app react-essentials in your terminal to install the Create React App. What does the npx part of the command stands for?
+
+The npx part of the command stads for the package runner. X probably stands for execution. The npx is a tool intended to help round out the experience of using packages from the npm registry - the same way npm makes it super easy to install and manage dependencies hosted on the registry. NPX makes it easy to use CLI tools and other executables hosted on the registry.
+
+11. Which element from the React Router Library is responsible for displaying the links inside nested components?
+
+Outlet
+
+12. Why incorporate the link component in your app for users?
+
+We need to incorporate the link component in our app to allow the users to navigate around the site.
+
+13. Why would you wrap your app component in the router?
+
+We have to wrap our app component in the <Router> component to give the app access to all the properties of the router.
+
+14. You have added the React Developer Tools as an extension to your browser. For Mac and PC, what shortcuts open these tools?
+
+- Mac: Command+Option+J
+- PC: Ctrl+Shift+J
+
+15. What is the React library used to create?
+
+The React library creates interactive user interfaces.
+
+16. How can you quickly access the React developer tools in Firefox?
+
+You can access the React developer tools in Firefox by right-click and then Inspect Element.
+
+17. When you open your index.js file, you will see the following code. What does this mean?
+
+ <StrictMode>
+   <App />
+ </StrictMode>
+
+When you will not write a good react code, you will be warned when your code is in violation of React's best practices and rules.
+
+18. Which tool in the Create React App will compile the following JSX code for you?
+
+ReactDOM.render(
+     <ul>
+          <li>Monday</li>
+          <li>Tuesday</li>
+          <li>Wednesday</li>          
+     </ul>,
+     document.getElementById("root")
+);
+
+Babel
+
+19. Which code block will correctly render two apps together using a shortened fragment syntax?
+
+ReactDOM.render(
+     <>
+          <App />
+          <AppTwo />
+     </>,
+     document.getElementById("root")
+);
+
+<> </> - <Fragment> </Fragment>
+
+20. If you want to create a list with the following items, how should you set up your food array?
+
+Macaroni and Cheese 
+Salmon
+Pizza with Vegetables
+Spaghetti
+Ice Cream
+Cake
+
+const food = [
+     "Macaroni and Cheese",
+     "Salmon",
+     "Pizza with Vegetables",
+     "Spaghetti",
+     "Ice Cream",
+     "Cake"
+];
+
+21. How should the header component appear if you replace the name "Eve's Kitchen" with the new name "Horacio's Kitchen" stored in a variable?
+
+function Header(props) {
+     console.log(props);
+     return (
+          <header>
+               <h1>{props.name}'s Kitchen</h1>
+          </header>
+     );
+}
+
+22. If you import the following image into your React application, what text can you add to make it more accessible?
+
+<img src={restaurant} />
+
+<img
+     src={restaurant}
+     alt="napkin and silverware at a restaurant table"
+/>
+
+23. Which transformation function can be written to set the dishes array to return objects?
+
+const dishObjects = dishes.map((dish, i) => ({ id: i, title: dish }));
+
+24. You want to create a component that returns a header named "Eve's Kitchen". To render this header, what is the next necessary code block?
+
+function Header() {
+     return (
+          <header>
+               <h1>Eve's Kitchen</h1>
+          </header>
+     );
+}
+
+function  App() {
+     return (
+          <div className="App">
+               <Header />
+          </div>
+     );
+}
+
+25. 
