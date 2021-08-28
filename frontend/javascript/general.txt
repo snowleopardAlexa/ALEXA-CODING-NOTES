@@ -1205,4 +1205,54 @@ So just in case you missed the differences, here they are:
 - They are all hoisted to the top of their scope. But while var variables are initialized with undefined, let and const variables are not initialized.
 - While var and let can be declared without being initialized, const must be initialized during declaration.
 
-71. 
+71. What is an advantage of using a constructor function to build objects?
+
+It lets you avoid writing redundant code.
+
+72. To create an object literal, you specify an object as the value of _____.
+
+a variable
+
+73. What does it mean when we say JavaScript is an "object-oriented" language?
+
+JavaScript is modeled around objects with properties and methods which can be handled in a modular fashion.
+
+74. What happens to the website and the code when you write code in the browser console?
+
+Code in the browser console impacts the current browser instance only. It exists in the console for as long as the window is open.
+
+75. What is an indicator of someone being a good JavaScript developer?
+
+They follow standards, invest in learning, use formatting and linting tools for consistency, and write accessible code.
+
+76. What is the natural environment for JavaScript?
+
+The browser, server environments, and your computer.
+
+77. What is ECMAScript?
+
+The specification describing how browsers should implement and interpret JavaScript.
+
+78. Where should you develop and test your JavaScript code?
+
+Develop in a code editor, test in as many browsers as you can get your hands on.
+
+79. Why have command line and automation tools become popular in JavaScript development?
+
+They simplify complex processes and introduce features to help developers write better code.
+
+80. When does the browser execute JavaScript?
+
+By default: When the script is encountered. If the script is set to "async", when the script is fully loaded. If the script is set to "defer", when the entire HTML page is rendered.
+
+81. What is the correct markup for adding an external JavaScript file to an HTML document?
+
+<script src="javascript.js" async></script>
+
+While `<script src="javascript.js"></script>` is technically correct, it is recommended to always async or defer your script unless you have a specific reason for the script to cause render blocking.
+
+82. What happens when you defer JavaScript?
+
+The browser loads the JavaScript asynchronously when it is encountered, then waits until all HTML is rendered before executing the script.
+
+83. 
