@@ -1,0 +1,165 @@
+1. Write the form where you can write the sound inside of it, choose the color, and add the color, useRef.
+
+import React, { useRef } from 'react';
+
+function Form() {
+    const sound = useRef();
+    const color = useRef();
+
+    const submit = (e) => {
+        e.preventDefault();
+        const soundValue = sound.current.value;
+        const colorValue = color.current.value;
+        alert(`${soundValue} sounds like ${colorValue}`);
+        sound.current.value = "";
+        color.current.value = "";
+    };
+
+    return (
+     <div class="form">
+       <h2>Write the sound in the form and assign to it the color</h2>
+       <form onSubmit={submit}>
+           <input
+            ref={sound} 
+            type="text"
+            placeholder="Sound..."
+            />
+           <input 
+            ref={color}
+            type="color" 
+           />
+           <button>ADD</button>
+       </form>
+     </div>   
+    );
+}
+
+export default Form;
+
+2. Write function for checked and unchecked checkbox with useReducer. 
+
+import React, {useState} from 'react';
+import ReactDOM from 'react-dom'
+import './index.css';
+
+function App() {
+ const [checked, toggle] = useReducer (
+    (checked) = !checked,
+     false
+  );
+retrun (
+  <>
+   <input
+    type="checkbox"
+    value="{checked}
+    onChange={toggle}
+   />
+   {checked ? "checked" : "not checked"}
+  </>
+ );
+}
+
+ReactDOM.render(
+<React.StrictMode>
+<App />
+</React.StrictMode>
+document.getElementById("root")
+);
+
+3. Write useReducer function where you display 0 number in the h1 and whenever you click on it, the number increases. 
+
+import React, {useReducer} from 'react';
+import ReactDOM from 'react-dom'
+import './index.css';
+
+function App() {
+ const [number, setNumber] = useReducer (
+  (number, newNumber) => number + newNumber, 0
+);
+return (
+  <h1 onClick={() => setNumber(1)}>{number}</h1>
+  );
+}
+
+ReactDOM.render(
+<React.StrictMode>
+<App />
+</React.StrictMode>
+document.getElementById("root")
+);
+
+4. Use useEffect Hook to create array dependency, change winner, logged in button. 
+
+import React, {useState, useEffect} from 'react';
+import ReactDOM from 'react-dom'
+import './index.css';
+
+function App() {
+const [name, setName] = useState("Jan");
+const [admin, setAdmin] = useState(false);
+
+useEffect(() => {
+  console.log(`Celebrate ${name}`);
+}, [name]);
+
+useEffect(() => {
+   'The user is: ${
+     admin ? "admin" : "not admin"
+   }
+ );
+// without [admin] array, useEffect hook returns all content instead of one information - inspect the code in the console to see it. 
+} [admin]);
+
+   return (
+    <section>
+      <p>Congrats!</p>
+      <button onClick={() => setName("Will")}>
+         Change winner
+      </button>
+    <p> 
+    {admin ? "logged in" : "not logged in"}
+    </p>
+    <button onClick={() => setAdmin(true)}>
+     Log In
+    </button>
+    <section>
+ );
+}
+
+Array dependency -  call this one any time the name changes. And then the second one here, we'll say call this one any time the admin changes.
+
+ReactDOM.render(
+<React.StrictMode>
+<App />
+</React.StrictMode>
+document.getElementById("root")
+);
+
+5. What is an array destructuring and why it is better from accessing by position? 
+
+// index.js
+import React from 'react';
+import ReactDOM from 'react-dom'
+import './index.css';
+import App from './App';
+
+// const people = ['Ola', 'Jola', 'Zuzia'];
+// accessing by position
+console.log(people[0]);
+
+// destructuring
+const [first, second, third] = ['Ola', 'Jola', 'Zuzia'];
+console.log(first);
+console.log(second);
+console.log(third);
+
+// second method destructuring
+const [, , third] = ['Ola', 'Jola', 'Zuzia'];
+console.log(third);
+
+ReactDOM.render(
+  <React.StrictMode>
+    <App name="Alex">
+  </React.StrictMode>,
+    document.getElementById("root")
+);
