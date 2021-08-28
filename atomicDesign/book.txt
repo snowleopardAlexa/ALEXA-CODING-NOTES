@@ -1,0 +1,102 @@
+1. Why the modularity matters more than ever?
+
+The modularity matters more than ever these days because we are drowning in a sea of devices, viewport sizes, and online environments. The quality and diversity of connected devices will explode. Our existing standards, workflows, and infrastructure won't hold up. Today's onslaught of devices is already pushing them to the breaking point. It's absolutely necessary for us to break giant responsabilities into smaller, more manageable chunks. 
+
+2. Why redesigning entire websites and replacing them with a completely new ones is not a good idea? What is the MVP?
+
+MVP - Minimum Viable Product - it is important to get things out the door quickier. The MVP ships a minimum product that is getting slightly improved upon user feedback. In this way the changes are applied in fewer chunks and the user does not feel overwhelemed by a totally changed UI that he must learn how to use from the scratch. The MVP also allows to ship the product faster, the potential mistakes can be easily corrected, and the product overall goes through the process of acceptance or rejection - nobody really wants it. 
+
+3. What is OOCSS, SMACSS, and BEM?
+
+...
+
+4. What is the design atmosphere? 
+
+While developing the website from the design program like Adobe or Sketch is not 100% from the technical point of view, it is important to create a design atmosphere. It is a feeling that we get when we see colors, texture and typography. The atmosphere of a design doesn't depend on layout. It's independent of arrangement and visual placement. It will be seen, or felt, at every screen size and on every device.
+
+5. What is the style tiles?
+
+Style Tiles are a design deliverable consisting of fonts, colors and interface elements that communicate the essence of a visual brand for the web. They help form a common visual language between the designers and the stakeholders and provide a catalyst for discussions around the preferences and goals of the cliet.
+
+styletil.es
+
+6. What are the element collages? 
+
+...http://v3.danielmall.com/articles/rif-element-collages/
+
+Check this out!
+
+7. What is the systematic UI design?
+
+Responsive web design --> fluid grids, flexible media, CSS and media queries. These technologies enable developers to create flexbile layouts that smartly adapt to any screen size. However, creating multi-device web experiences involves a lot more than creating squishy pages. Each individual piece of an interface contains its own unique challenges and opportunities in order for it to look and function beautifully across many screen sizes and environments. 
+
+How we present navigation - typically displayed as a horizontal list on large screens - in a thoughful way on smaller screens? How do lightboxesm breadcumbs, and carousels translate to smaller viewports and alternate input types?---> This Is Responsive --> a showcase of responsive patterns that demonstrate the various ways a particular component could be executed in a responsive environment. 
+
+8. What is This Is Responsive?
+
+This Is Responsive --> a showcase of responsive patterns created by Atomic Design author. 
+
+9. What is SCRUM? 
+
+Scrum is a framework utilizing an agile mindset for developing, delivering, and sustaining complex products, with an initial emphasis on software development, although it has been used in other fields including research, sales, marketing, and advanced technologies.  It is designed for teams of ten or fewer members, who break their work into goals that can be completed within time-boxed iterations, called sprints, no longer than one month and most commonly two weeks. The Scrum Team assess progress in time-boxed daily meetings of 15 minutes or less, called daily scrums. At the end of the sprint, the team holds two further meetings: the sprint review which demonstrates the work done to stakeholders to elicit feedback, and sprint retrospective which enables the team to reflect and improve.
+
+10. What is Lean software development?
+
+Lean software development is a translation of lean manufacturing principles and practices to the software development domain. 
+
+Lean development can be summarized by seven principles, very close in concept to lean manufacturing principles:
+
+- Eliminate waste
+- Amplify learning
+- Decide as late as possible
+- Deliver as fast as possible
+- Empower the team
+- Build integrity in
+- Optimize the whole
+
+Lean philosophy regards everything not adding value to the customer as waste (muda). Such waste may include:
+
+- Partially done work
+- Extra features
+- Relearning
+- Task switching
+- Waiting
+- Handoffs
+- Defects
+- Management activities
+
+11. What are the fontend fameworks for developers?
+
+Bootstrap, Foundation, Material UI, Materialize, Svetle, Ember, Preact, React, Angular, Vue, Semantic, Bulma. 
+
+12. What are the advantages and disadvantages of the frontend frameworks? 
+
+PROS:
+
+The SPEED is the most attractive aspects of a framework. They allow designers to get ideas off the ground quickly, rapidly create prototypes, and launch sites sooner. Because the patterns provided by a tool kit are already cross-browser tested, devs can spend their time on more important tasks rather than beating their heads against a table testing some archaic version of IE. Frameworks help startups launch the MVP sooner, leading to faster answers regarding the products' viability. Frameworks provide well-tested components, resulting in consistent designs and faster launches. 
+
+- consistent designs and faster launches
+- well-tested components
+- they help startups to launch products sooner
+- patterns provided by toolkits are already cross-browser tested. 
+
+CONS:
+
+Front-end frameworks are tools that provide a specific solution and a particular look and feel. These solutions speed up development, but everyone uses the same buttons, grids, dropdowns, and components, and things naturally start to look the same. We can modify and extend the default look and feel of the framework, but after a while customization means fighting the framework's given structure, style, and functionality. Additional bloat to an experience is also an issue --> users must downloand the framework's unused CSS and JS, resulting in slower page loads and frustration. It is obvious that devs will not use all the components of the framework in the project. Frameworks might not go far enough, leading to a need to create a custom code to achieve the project's goals. Sometimes the initial benefits of using a framework are outweighted by the time spent modifying, extending, and fixing the framework. The issue with naming. Using the framework means subscribing someone else's structure, naming, and style conventions, example: "jumbotron" by Bootstrap.
+
+- adapting framework's naming conventions might be frustraiting. 
+- modifying, extending and fixing framework might take more time than it is worth to use it
+- the need for writing a custom code even if we use the framework
+- things start to look the same - the same components, buttons, grids, navigations on each webpage out there
+- users must downloand the entire framework even if not all the components are not used in the projects by devs.
+
+13. What are the styles guides?
+
+Style guides include documentation for brand identity, writing, voice, and tone, code, design language, and user interface patterns. 
+
+- BRAND IDENTITY: the assets, materials that make company unique - logos, typography, color palettes, messaging (mission statements and taglines), collateral (business card and PowerPoint templates).
+- DESIGN LANGUAGE: they articulate a general design direction, philosophy, and approach to specific projects or products --> material design by Google. 
+- VOICE AND TONE: people interact with brands across a huge array of channels and media. In addition to the digital media we've discussed so far, brands also operate in print, retail, outdoor, radio, TV, and other channels. Speaking in a unified, consistent manner becomes critical to a brand's success. 
+- WRITING: provide every author some guidelines for contributing content. 
+- CODE STYLE GUIDES: it's essential to writ legible, scalable, maintainable code. But without a way to promote and enforce code consistency, it's easy for things to fall apart and leave every develope to fend for themselves. 
+- PATTERN LIBRARIES: UI libraries, component libraries.
