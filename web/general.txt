@@ -1,0 +1,73 @@
+1. What are the 3 tools of the web?
+
+- web browser
+- browser developer tool
+- code editor
+
+2. What are developer tools?
+
+Built into every modern browser. They allow you to see the code, network conditions, and other properties of the current document running in the browser. 
+
+3. Explain the process of URL to web? What happens when you write URL in the address bar and click enter, what is returned?
+
+Whether you type out a web address yourself or click on a bookmark or follow a link, the address bar is filled with a URL, or Universal Resource Locator. This URL is quite literally a locator following a universal standard that points at a specific resource somewhere on the web, and that resource is the document you're trying to access and all it's associated assets, and that somewhere is a server connected to the internet somewhere in the world whose IP address is mapped to the domain you used in a DNS, or Domain Name Server. Here's how all of that works. A URL is entered in the address bar. When the user hits Return or touches the button on their phone or something else, the browser sends a get request to this URL, which asks the server on the other side to send back all the data it has. The URL is sent to a domain name server, known more commonly as DNS. The DNS figures out which IP address the domain is pointing at, and passes the request to the server on that IP address. The server retrieves all the data, aka the resource, and sends it back to the browser. The resource received by the browser is in all likelihood an HTML, or Hypertext Markup Language document. HTML is the universal document language for the worldwide web. This HTML document contains all the contents of the page as well as references to media items like images, audio and video. It also contains links to cascading style sheets, or CSS, containing instructions on how the content should be displayed in the browser, and possibly JavaScript, small programs that run in the browser. Finally, the browser puts the HTML and CSS and JavaScript together and paints the view you see in the viewport, the space inside the browser where the web is displayed. All of this back and forth and putting together happens really fast, usually in a few seconds or less, and most of it is automated and largely out of our control. 
+
+4. What is the web in the browser?
+
+Once the website appears in the browser, we can start interacting with it. On the surface, we can look at the contents, read the text, view the images and videos, listen to audio, and interact with interactive elements. Look a little bit deeper, and what we find is a carefully-structured document displayed as a collection of boxes with different properties. There's a header section containing the site title, logo, and a navigation menu, there's the main section containing an article which in turn contains a heading or collection of paragraphs and an image, there's a sidebar section with some advertising, and there's a footer section with company information. There's a visual structure to all this content, but that's just being styled in the browser. Turn off the CSS, and we see the true, underlying structure of the document. Remember, every webpage and every website is a document, and a properly structured document is readable and accessible, even without all the fancy colors and fonts and layouts, which kind of is the whole point of the web. Serve up the content in a uniform format, and let people decide how to access that content.
+
+5. HTML documents can only be accessed through a web browser.
+
+FALSE
+
+While the web browser is the most common tool for accessing HTML documents, it is not the only one. Any application that can read text can read an HTML document. HTML is also written in code editors which are not browsers.
+
+6. What is the structure of a web document?
+
+When looking at the contents in the browser, it's not immediately obvious that everything is a box within a box within a box. But, with a tiny bit of code we can visualize every box. This nesting of elements serves two purposes. On the code end, it allows the author to create a highly-structured document with clear relationships between different elements. Think a header that holds the site title, logo, and a navigation section, which in turn holds each of the navigation items. This allows servers, browsers, and other applications to figure out how the content is structured without needing to understand the content itself. On the display end, nesting allows for style inheritance. If you apply a style property, say font family to an element, all elements nested inside or descendant of that element will inherit the same font family property. Using the property of style inheritance, you can position elements relative to their parent elements, create flexible boxes and grid layouts, create interactions that impact parent, child or sibling elements, and control every detail of every piece of content in the document.
+
+7. What is the node tree?
+
+Any time a browser is asked to display an HTML document, it creates a document object model or DOM, which is a structural representation of the elements in the document and their relationships. This document object model can be visualized as a DOM tree, where each element is a leaf or node, and the connections are branches. When you add new elements to an HTML document, you are effectively adding a node to this DOM tree. When you target elements using CS or Javascript, you ask the browser to follow the branches all the way from the root to the node or nodes in question. This is called either walking or traversing or navigating the DOM. When I develop, design, and work with web documents, I often find it useful to visualize or actually draw out the dom tree or part of the tree to understand relationships and inheritants between different elements. This also encourages me to reduce complexity and avoid unnecessary nesting. This way, I'm able to keep accessibility and logical structure front and center. Remembering that every element is a box, and that every box is a node on the tree connected to its parents, siblings, and descendants via branches is key to understanding how the browser sees the Web and how you can give the browser sufficient information to do what you want.
+
+8. What is your primary priority when writing an HTML document?
+
+To write HTML markup so the content it supports is accessible to all people.
+
+9. The structure of an HTML document should be based on the natural reading order of the content.
+
+TRUE.
+
+10. What is the purpose of metadata in an HTML document?
+
+Provide the browser and applications accessing the content semantic information about its contents.
+
+11. What is the superpower of web?
+
+The web was created to allow everyone to share information through documents over the internet. All the other stuff, making a document look pretty and have cool interactive features and so on, is secondary. What matters is the document itself. And what makes the web so special and so successful that large portions of the people alive today across the world carry a web browser in their pocket, is that that document has superpowers. Consider a handwritten or printed document. I can write stuff on it and then pass it to someone else, and they can read that information. That's cool, but it's also limited by the physicality of the document itself. Its information can only be accessed by those who can physically hold the document. To get around this, I could make the document into a shareable file, like a PDF, and put it on the internet. But then, people would have to download it, open it in the right application, and look at it in the way it was originally formatted on their screen. HTML is fundamentally different. It gives a document superpowers. If I mark up my document in HTML and put it on the web, I grant everyone with an internet connection the ability to access that content in the document in any way they want. If they want to view it with the styling and interactivity I designed, they can open it in a regular web browser. If they want to access just the content, they can use a text only browser or a text-to-speech browser. If they want to add their own styling and interactivity, they can do so in their own browser without affecting the original document, since they are working on their own local copy, and if they want to add something to the information, they can publish their own HTML document and provide a link back to mine. The web was built to make information accessible, shareable, and linkable. With HTML, any web document can link to contents within itself, to other contents on the same domain, or to any content anywhere on the web. That is why it's called the World Wide Web. It's quite literally a web of links tying information from all over the world together, and making it all accessible through a web browser to date, and to other means we have yet to come up with in the future. And the best thing, the superpower of HTML belongs to everyone.
+
+12. What is a "resource"?
+
+Any content found at the end of a URL.
+
+13. All HTML documents are accessible.
+
+FALSE
+
+While HTML itself is an accessible markup language, only correctly marked up documents provide accessible questions.
+
+14. What is style inheritance?
+
+A style rule applied to an element is inherited by any child elements.
+
+15. What is a DOM tree node?
+
+An element in an HTML document.
+
+16. HTML is a declarative markup language. What does this mean?
+
+HTML markup describes the contents of the document without providing instructions on how to present or interact with that content.
+
+17. To make a feature in a your web project accessible, you need to change its design. What do you do?
+
+Change the design. Accessibility is job number one.
