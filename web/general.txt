@@ -71,3 +71,70 @@ HTML markup describes the contents of the document without providing instruction
 17. To make a feature in a your web project accessible, you need to change its design. What do you do?
 
 Change the design. Accessibility is job number one.
+
+18. What web browsers should you build your content for?
+
+None. The content should work in any application a visitor chooses to use, browser or not.
+
+19. What is the dual purpose of web code?
+
+When writing for the web, you're writing for two audiences, the human being accessing the content and the technology used to access that content, in most cases a web browser. The key to writing accessible, understandable, and usable content is to write content for people and then mark it up so it can also be parsed properly by computers. Start with a heading, then write a paragraph and another paragraph, and add an image with a caption and maybe another paragraph followed by a subheading, and so on. The challenge comes when we have to explicitly state what each of these things are so they can be marked up and declaratively codified for computers. The goal is to write code that satisfies our end goal, conveying the contents to the persons accessing it in the best way possible. To do so, we have to identify the nature, properties, purpose, and relationships of each element of content so they can be marked up as such. The first heading is the main heading, so it should have heading level one. The first paragraph is the intro paragraph and should signal this in some way for a viewer without changing the markup. We can do that by adding a drop-cap through CSS. The image has a caption so it should be wrapped in a figure element and the caption as a figcaption element. The next heading is a subheading and should, therefore, have heading level two, and so on. To reiterate, you have two goals, communicate with a human consumer and communicate with a machine. To do this, you must effectively write the content, identify the nature, property, purpose, and relationships of each element of that content and mark everything up accordingly.
+
+20. What is web metadata?
+
+Nonvisual data added to a web document to provide further information about purpose and function.
+
+21. What is accessibility?
+
+At the core of web accessibility is a simple principle. Content should be accessible regardless of what tool the visitor uses to access it. They should be able to get the same content, whether they use a standard visual browser or a text to speech browser. They should be able to interact with links and buttons, and other elements, whether they use a finger or a mouse, or a keyboard, or any other input device. This is important, not just because everyone should have access to all contents posted on the web, but also because we don't know how people will be accessing that content in the future, and making it accessible today, means making it accessible for future devices, applications, and modalities. The good news is web accessibility is neither complicated nor expensive, if it's built in from the start. Semantic standards-compliant HTML is accessible by default. Accessibility issues are introduced when we start trying to make a simple web document look and act fancy. That can be a challenge, and it can also be an opportunity. Let's you and me make an agreement right here. All the things we build for the web from here on out will be accessible. That's all. How do we do that? Here's the plan. First, make it accessible, then make it fancy, and finally, make sure whatever you did to make it fancy doesn't break accessibility. Here's what that can look like in the day-to-day process. First, always start with Semantic standards-compliant HTML. That gives you an accessible base to work from. Second, as you add styling to the content, run accessibility checks for keyboard navigation, course pointers, color contrast, cognitive load, screen readers, et cetera. Third, if an accessibility issue arises, fix it before moving the project forward to avoid it becoming a legacy issue. Fourth, bring in accessibility consultants and testers to audit the final product before launch. Fifth, make accessibility part of the maintenance and iteration plan for the project. The web was created to make content accessible to everyone. It is our job as the people who build the web to ensure all content is available to all visitors in a format they can use.
+
+22. Advanced code editors produce better code.
+
+Code editors don't write code. Developers write code. Advanced code editors just add tools to help with the process. Great code can be written in any text editor.
+
+23. When should you open the browser developer tools?
+
+- Any time you want to make changes to the HTML, CSS, or JavaScript of a document
+- Any time you see an error in a web document
+- Any time you want to inspect the code the browser is currently working with
+
+24. How to put all together html, dom, js, css, and events?
+
+- HTML: decribes the document and its contents
+- DOM: is created from the HTML elements
+- JavaScript: interacts with the DOM make changes/add features to the HTML
+- CSS: apples presentational styles to the DOM elements
+- Events: are triggered by the user, the browser, or something else and make changes to HTML, CSS, and JavaScript.
+
+25. What is the best browser cross testing?
+
+- turn on Live Server in VS.
+- check Browsersync - time-saving synchronised browser testing.
+
+26. What is the function of HTML?
+
+To mark up each element in a document with a tag describing its function.
+
+27. The "cascading" part of Cascading Style Sheets means CSS rules are applied from the top down.
+
+TRUE
+
+The browser applies CSS rules from the top down giving the most weight to the lowest element in the document.
+
+28. What should happen when a visiting browser does not support JavaScript?
+
+The content and all functionality is accessible.
+
+29. Where is the DOM?
+
+In the browser, generated when the HTML document is loaded, and manipulated by JavaScript.
+
+30. JavaScript only fires on events.
+
+FALSE
+
+While some JavaScript functions may fire on events, JavaScript can also be set to run based on a timer or other factors.
+
+31. For a website to work, it must be served from a web server.
+
+Partially true: While a website can work in a non-server environment, many advanced features will not be available.
