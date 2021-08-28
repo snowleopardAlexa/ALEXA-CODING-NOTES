@@ -1,0 +1,52 @@
+1. What are the snippets?
+
+Snippet is a programming term for a small region of re-usable source code, machine code, or text. Snippet management is a feature of some text editors, program source code editors, IDEs, and related software. 
+
+2. What are the task-runners?
+
+Command-line tools used to automate development tasks for your projects.
+
+Gulp.js and Grunt.js --> task runners
+
+They are different approaches to same problems. Grunt uses configuration based approach, while gulp uses streams from node to achieve result. You use them to define how and which tasks to execute - copying file, adding banners, replacing text, style checking. 
+
+- organization: keep your packages in one place.
+- personalization: configure packages to run how you like.
+- collaboration: keep dependencies in sync across teams.
+- control: use specific versions of packages.
+
+3. Does the code update automatically in the browsers developer tools when you write it in the console?
+
+YES
+
+4. What are the good extensions?
+
+- Awesome Screenshot
+- WhatFont
+
+5. What are the ide?
+
+IDE - INTEGRATED DEVELOPMENT ENVIRONMENT. Text editors in which developers write, read, modify the code.
+
+6. What is the autocomplete?
+
+Use autocomplete shortcuts for repetitive code, to reduce typos and syntax errors. Tab completion features are used to generate common code syntax by using abbreviated syntax, with the tab key, to expand the abbreviations into full syntax.
+
+7. What is virtual machine and how do they work?
+
+A VM is a compute resource that uses software instead of a physical computer to run programs and deploy apps. One or more virtual "guest" machines run on a physical "host" machine. Virtual MacOS can run on a PC. 
+- used to run and test software made for other operating systems.
+- emulates an operating system, allowing you to install programs for that OS.
+
+8. What are the workflow tools?
+
+- VirtualBox
+- BrowserStack
+- CrossBrowserTesting
+- email testing
+- caniuse.com
+- wave.com
+
+Reduce browser compatibility issues by writing clean code and following best practices.
+
+9. 
