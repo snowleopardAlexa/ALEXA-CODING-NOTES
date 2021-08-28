@@ -26,4 +26,52 @@ JSON does not have many implementations in popular languages.
 
 jQuery
 
-7. 
+7. JSONP is a technique that you can use in order to be able to read JSON data from external websites. What you end up doing is tricking the page into loading our JSON data as a script.
+
+TRUE
+
+8. Which of the following is not true about AJAX?
+
+With AJAX you access data from something you type into JavaScript.
+
+9. Which type of loops do you use to access object elements in an object list that's not defined as an array of objects?
+
+FOR and IN
+
+10. If you're looking to read your objects in any specific order, then you probably want to fold the objects into an _____?
+
+ARRAY
+
+11. Which function do you use to delete a node in an array using the Developer tools?
+
+splice
+
+12. Developer tools are a great way to explore your JavaScript and JSON objects and to figure out how to get to a specific element.
+
+TRUE
+
+13. What is mustache.js?
+
+It's a zero-dependency implementation of the mustache template system in JS. It is logic-less template syntax. It can be used for HTML, config files, source code - anyhing. 
+
+14. What does href represent in the following link? 
+ 
+<link rel="stylesheet" href="mystyle.css" />
+
+The link relation will be stylesheet, the href will represent the location of the CSS file.
+
+15. _____ is a plugin for jQuery that lets you do a lot of different effects as well as rotate a series of div elements.
+
+jQuery Cycle
+
+16. _____ is a logicless template library that lets you flow JSON data onto an existing page.
+
+Mustache.js
+
+17. When you're working with AJAX, you cannot work off of a live server.
+
+FALSE
+
+18. Explain AJAX and JSON in JavaScript - how do they work? Write the examples. 
+
+...
