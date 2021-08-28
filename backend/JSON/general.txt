@@ -1,0 +1,29 @@
+1. Which of the following is a tool for validating JavaScript and JSON code?
+
+JS Hint
+JSON Editor Online
+JSONLint
+
+2. The following is a valid JSON object. 
+ 
+var info = {"full_name" : "John Doe", "title" : "Author" "qty" : 3 };
+
+FALSE
+
+3. Which of the following is not true about JavaScript?
+
+A JavaScript object can only be strings, numbers, objects, and arrays.
+
+4. Which of the following is NOT true about JSON?
+
+JSON does not have many implementations in popular languages.
+
+5. What is JSONP? How do you use it?
+
+...
+
+6. .....  is a library that fixes a lot of problems in older browsers. It also gives you a language for selecting elements in your document object model.
+
+jQuery
+
+7. 
