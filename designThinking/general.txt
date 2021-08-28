@@ -1,0 +1,60 @@
+1. What is the Design Thinking and what is its role?
+
+Design Thinking does not focus on a single technology. It is human-centric approach. It puts people first, before thinking about technology, to enable them to achieve more. This approach leads to more meaningful and innovative solutions, regardless of the industry. It is a set of cognitive, strategic and practical processes by which design concepts (proposals for products, buildings, machines, etc.) are developed. Many of the key concepts and aspects of design thinking have been identified through studies.
+
+2. Design Thinking emphasizes delivering a good tool to users faster, rather than waiting on the completion of the perfect tool. Is it true or false and why?
+
+Putting a good and functional tool in the hands of the users as soon as possible is more valuable than delivering a perfect tool when it's too late. Also, delivering a prototype can eliminate the potential errors and make the tool better in the next version.
+
+Design Thinking accomplishes this by establishing the boundaries of the product early through the definition of the Minimum Viable Product (MVP). Once the MVP is delivered, the team continues to iterate on the solution, incrementally improving and enhancing it by leveraging continous feedback from users and stakeholders.
+
+3. What are the 5 phases of Design Thinking. These phases are based on 3 core principles, what principles?
+
+There are many important ideas and principles when utilizing the Design Thinking. At its core though, it's a user-centric. Therefore the most important characteristic of a solution is that it meets the needs of the user. To ensure solutions achieve this objective, the 3 fundamental principles of Design Thinking guide teams through the process of defining the MVP, and then iteratively improving and enhancing it to achieve the final product:
+
+These 3 principles are:
+
+1. Empathy
+2. Ideation
+3. Experimentation
+
+- Empathy: is simply understanding the needs of the user.  A designer must set aside their own assumptions about the problem so that they might gain this insight. In Design Thinking, the team must always remain focused on the people for whom they are designing.
+
+- Ideation: this principle centers on the generation of ideas - both many and diverse.  This principle allows for maximum creativity and innovation.
+
+- Experimentation: is also described as "launch and learn". A Mimimum Viable Product is released and then iteratively developed with continuous feedback from users and other stakeholders. This approach aligns particularly well with Agile development practices.
+
+These 3 principles translate into 5 phases that result in an innovative and meaningful solution.  The five phases of Design Thinking are:
+
+1. Empathize - the development of a deep empathetic understanding of user needs.
+
+2. Define - using the knowledge gathered in phase one to specifically define the underlying problem to be solved.
+
+3. Ideate - the generation of creative ideas to solve the problem defined in phase two and focused on meeting the needs of the user.
+
+4. Prototype - the generation of multiple solutions, continuously improved through experimentation and iteration, guided by continuous feedback from the users.
+
+5. Test - the rigorous testing of the prototype, often resulting in the generation of required revisions to the product, based on the redefinition of the problem statement and greater understanding of the user need.
+
+4. Which of the following methods should a designer use to derive insights into user needs?
+
+The designer must observe users and stakeholders in their daily work. Observation often provides the most objective identification of the problem requiring a solution. Engage users and stakeholders in interviews and conversations to develop the best possible understanding of their needs and objectives. The designer must immerse themselves in the physical environment of the users. 
+
+5. Only high-fidelity prototypes are of value in Design Thinking. Is it true or false?
+
+It's false! One of the main reasons for prototyping is to fail fast. Even a simple pencil & paper prototype can help teams to discover that they're on the wrong track. As prototypes evolve user testing becomes more involved, but their feedback should be incorporated right from the beginning. Prototyping allows for this kind of continuous feedback loop with users and other stakeholders from the start.
+
+6. What is the prototype and what are its phases?
+
+A prototype is a simplified version of the solution.  Even a simple pencil & paper prototype can help teams to discover whether they're on the wrong track. Each prototype is investigated and either accepted, improved and re-examined, or rejected on based on user feedback.
+
+The following 4 factors are important considerations in Prototyping:
+- Form
+- Interactivity
+- Lifecycle
+- Fidelity
+
+As the process continues, prototypes generally go from lower to higher fidelity.
+
+Remember, one of the main reasons for prototyping is to _fail fast_. Be careful to avoid the common pitfall of spending too much time and money on a prototype!
+
