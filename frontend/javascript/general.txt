@@ -1575,3 +1575,93 @@ Adds the specified class if it is not appended to the element, removes the speci
 135. Where in the HTML document does the new element appear when you use the document.createElement() method?
 
 Nowhere: The element is created, but has not been added to the DOM.
+
+136. What is the "DOM"?
+
+DOM is short for "Document Object Model", the document object the browser creates when it renders an HTML document.
+
+137. How do you add an element created using createElement() to the DOM?
+
+All these options and more.
+
+138. What does a single equals symbol in JavaScript indicate?
+
+A value is assigned to the named variable.
+
+139. What happens if you use a named variable without first declaring it using the var, let, or const keywords?
+
+A global var is created with the name and value assignment.
+
+140. What is the value of defaultColor when it is logged in the console?
+ 
+var defaultColor = "purple";
+
+function setColor() {
+    if ( defaultColor === "purple" ) {
+        let defaultColor = "orange";
+    }
+}
+
+setColor();
+console.log(defaultColor);
+
+"purple"
+
+The console.log statement happens in the global scope while the color is changed in a local scope where a separate let with the same name is created. let defaultColor only exists inside the function scope of setColor().
+
+141. How do you capture the result of a math equation like 42 * 38 in JavaScript?
+
+Create a variable and set it equal to the math equation.
+
+142. In what scenario should you use var instead of let to define a variable?
+
+When you need a globally scoped reassignable variable available to all functions and statements.
+
+143. Which statement is true?
+
+Object properties within a constant can be changed.
+
+144. What is logged in the console after this code is executed?
+ 
+let sum = 23.95;
+let tip = "3";
+
+console.log("The total is $" + sum + tip + ".");
+
+"The total is $23.953."
+
+145. What is the do the operators (equals symbols) in these three lines of code signify?
+ 
+a = b
+a == b
+a === b
+
+a = b assigns the value of b to a. a == b tests for equality between a and b. a === b tests for identical equality between a and b.
+
+146. Given the array below, how would you access the item whose value is 7?
+ 
+ var numbers=[4, 7, 3, 5, 2];
+
+numbers[1]
+
+147. What will the numbers array look like when the following code finishes executing?
+ 
+ var numbers=[1, 2, 3, 4, 5];
+ numbers.push(6);
+ numbers.unshift(7);
+ numbers.pop();
+ numbers.shift();
+
+1, 2, 3, 4, 5
+
+148. What happens when you add a new array item to a previously undefined slot?
+
+A new slot is added corresponding to the slot number provided.
+
+149. The first item of an array has the index position 1.
+
+FALSE
+
+150. Arrays can hold a mix of any data type.
+
+TRUE
