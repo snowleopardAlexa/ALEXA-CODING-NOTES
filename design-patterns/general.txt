@@ -1,0 +1,109 @@
+1. What are classes in OOP?
+
+In a nutshell, classes are essentially user defined data types. Classes are where we create a blueprint for the structure of methods and attributes. Individual objects are instantiated, or created from this blueprint.
+
+Classes contain fields for attributes, and methods for behaviors. In our Dog class example, attributes include name & birthday, while methods include bark() and updateAttendance().
+
+class Dog {
+    constructor(name, birthday) {
+        this.name = name;
+        this.birthday = birthday;
+    }
+
+    //Declare private variables
+    _attendance = 0;
+
+    getAge() {
+        //Getter
+        return this.calcAge();
+    }
+
+    calcAge() {
+        //calculate age using today's date and birthday
+        return Date.now() - this.birthday;
+    }
+    
+    bark() {
+        return console.log("Woof!");
+    }
+
+    updateAttendance() {
+        //add a day to the dog's attendance days at the petsitters
+        this._attendance++;
+    }
+}
+
+Remember the class is a template for modeling a dog, and an object is instantiated from the class representing an individual real world thing.
+
+2. What is the Observer design pattern?
+
+If you've ever used the MVC pattern, you've already used the observer design pattern. The Model part is like a subject and the View part is like an observer of that subject. Your subject holds all of the data and the state of that data. Then you have observers, like different components, that will get that data from the subject when the data has been updated.
+
+The goal of the observer design pattern is to create this one-to-many relationship between the subject and all of the observers waiting for data so they can be updated. So anytime the state of the subject changes, all of the observers will be notified and updated instantly.
+
+Some examples of when you would use this pattern include: sending user notifications, updating, filters, and handling subscribers.
+
+Say you have a single page application that has three feature dropdown lists that are dependent on the selection of a category from a higher level dropdown. This is common on many shopping sites, like Home Depot. You have a bunch of filters on the page that are dependent on the value of a top-level filter.
+
+The code for the top-level dropdown might look something like this:
+
+class CategoryDropdown {
+  constructor() {
+    this.categories = ['appliances', 'doors', 'tools']
+    this.subscriber = []
+  }
+  
+  // pretend there's some fancy code here
+  
+  subscribe(observer) {
+    this.subscriber.push(observer)
+  }
+  
+  onChange(selectedCategory) {
+    this.subscriber.forEach(observer => observer.update(selectedCategory))
+  }
+}
+
+This CategoryDropdown file is a simple class with a constructor that initializes the category options we have available for in the dropdown. This is the file you would handle retrieving a list from the back-end or any kind of sorting you want to do before the user sees the options.
+
+The subscribe method is how each filter created with this class will receive updates about the state of the observer.
+
+The onChange method is how we send out notification to all of the subscribers that a state change has happened in the observer they're watching. We just loop through all of the subscribers and call their update method with the selectedCategory.
+
+The code for the other filters might look something like this:
+class FilterDropdown {
+  constructor(filterType) {
+    this.filterType = filterType
+    this.items = []
+  }
+  
+  // more fancy code here; maybe make that API call to get items list based on filterType
+  
+  update(category) {
+    fetch('https://example.com')
+      .then(res => this.items(res))
+  }
+}
+
+This FilterDropdown file is another simple class that represents all of the potential dropdowns we might use on a page. When a new instance of this class is created, it needs to be passed a filterType. This could be used to make specific API calls to get the list of items.
+
+The update method is an implementation of what you can do with the new category once it has been sent from the observer.
+
+Now we'll take a look at what it means to use these files with the observer pattern:
+
+const CategoryDropdown = require('./CategoryDropdown')
+const FilterDropdown = require('./FilterDropdown')
+
+const categoryDropdown = new CategoryDropdown() 
+
+const colorsDropdown = new FilterDropdown('colors')
+const priceDropdown = new FilterDropdown('price')
+const brandDropdown = new FilterDropdown('brand')
+
+categoryDropdown.subscribe(colorsDropdown)
+categoryDropdown.subscribe(priceDropdown)
+categoryDropdown.subscribe(brandDropdown)
+
+What this file shows us is that we have 3 drop-downs that are subscribers to the category drop-down observable. Then we subscribe each of those drop-downs to the observer. Whenever the category of the observer is updated, it will send out the value to every subscriber which will update the individual drop-down lists instantly.
+
+3. 
