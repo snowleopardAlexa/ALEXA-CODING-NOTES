@@ -667,5 +667,334 @@ Objects of different types can be passed through the same interface:
 
 Object Oriented programming requires thinking about the structure of the program and planning at the beginning of coding. Looking at how to break up the requirements into simple, reusable classes that can be used to blueprint instances of objects. Overall, implementing OOP allows for better data structures and reusability, saving time in the long run.
 
+19. What is the Singelton Design Pattern?
+﻿
+The singleton pattern only allows a class or object to have a single instance and it uses a global variable to store that instance. You can use lazy loading to make sure that there is only one instance of the class because it will only create the class when you need it.
+﻿
+That prevents multiple instances from being active at the same time which could cause weird bugs. Most of the time this gets implemented in the constructor. The goal of the singleton pattern is typically to regulate the global state of an application.
+﻿
+An example of a singleton that you probably use all the time is your logger.
+﻿
+If you work with some of the front-end frameworks like React or Angular, you know all about how tricky it can be to handle logs coming from multiple components. This is a great example of singletons in action because you never want more than one instance of a logger object, especially if you're using some kind of error tracking tool.
+﻿
+class FoodLogger {
+  constructor() {
+    this.foodLog = []
+  }
+    
+  log(order) {
+    this.foodLog.push(order.foodItem)
+    // do fancy code to send this log somewhere
+  }
+}
+﻿
+// this is the singleton
+class FoodLoggerSingleton {
+  constructor() {
+    if (!FoodLoggerSingleton.instance) {
+      FoodLoggerSingleton.instance = new FoodLogger()
+    }
+  }
+  
+  getFoodLoggerInstance() {
+    return FoodLoggerSingleton.instance
+  }
+}
+﻿
+module.exports = FoodLoggerSingleton
+﻿
+Now you don't have to worry about losing logs from multiple instances because you only have one in your project. So when you want to log the food that has been ordered, you can use the same FoodLogger instance across multiple files or components.
+﻿
+const FoodLogger = require('./FoodLogger')
+﻿
+const foodLogger = new FoodLogger().getFoodLoggerInstance()
+﻿
+class Customer {
+  constructor(order) {
+    this.price = order.price
+    this.food = order.foodItem
+    foodLogger.log(order)
+  }
+  
+  // other cool stuff happening for the customer
+}
+﻿
+module.exports = Customer
+﻿
+const FoodLogger = require('./FoodLogger')
+﻿
+const foodLogger = new FoodLogger().getFoodLoggerInstance()
+﻿
+class Restaurant {
+  constructor(inventory) {
+    this.quantity = inventory.count
+    this.food = inventory.foodItem
+    foodLogger.log(inventory)
+  }
+  
+  // other cool stuff happening at the restaurant
+}
+﻿
+module.exports = Restaurant
+﻿
+With this singleton pattern in place, you don't have to worry about just getting the logs from the main application file. You can get them from anywhere in your code base and they will all go to the exact same instance of the logger, which means none of your logs should get lost due to new instances.
+
+20. What is the Strategy Design Pattern?
+﻿
+The strategy is pattern is like an advanced version of an if else statement.  It's basically where you make an interface for a method you have in your base class. This interface is then used to find the right implementation of that method that should be used in a derived class. The implementation, in this case, will be decided at runtime based on the client.
+﻿
+This pattern is incredibly useful in situations where you have required and optional methods for a class. Some instances of that class won't need the optional methods, and that causes a problem for inheritance solutions. You could use interfaces for the optional methods, but then you would have to write the implementation every time you used that class since there would be no default implementation.
+﻿
+That's where the strategy pattern saves us. Instead of the client looking for an implementation, it delegates to a strategy interface and the strategy finds the right implementation. One common use for this is with payment processing systems.
+﻿
+You could have a shopping cart that only lets customers check out with their credit cards, but you will lose customers that want to use other payment methods.
+﻿
+The strategy design pattern lets us decouple the payment methods from the checkout process which means we can add or update strategies without changing any code in the shopping cart or checkout process.
+﻿
+class PaymentMethodStrategy {
+﻿
+  const customerInfoType = {
+    country: string
+    emailAddress: string
+    name: string
+    accountNumber?: number
+    address?: string
+    cardNumber?: number
+    city?: string
+    routingNumber?: number
+    state?: string
+  }
+  
+  static BankAccount(customerInfo: customerInfoType) {
+    const { name, accountNumber, routingNumber } = customerInfo
+    // do stuff to get payment
+  }
+  
+  static BitCoin(customerInfo: customerInfoType) {
+    const { emailAddress, accountNumber } = customerInfo
+    // do stuff to get payment
+  }
+  
+  static CreditCard(customerInfo: customerInfoType) {
+    const { name, cardNumber, emailAddress } = customerInfo
+    // do stuff to get payment
+  }
+  
+  static MailIn(customerInfo: customerInfoType) {
+    const { name, address, city, state, country } = customerInfo
+    // do stuff to get payment
+  }
+  
+  static PayPal(customerInfo: customerInfoType) {
+    const { emailAddress } = customerInfo
+    // do stuff to get payment
+  }
+}
+﻿
+To implement our payment method strategy, we made a single class with multiple static methods. Each method takes the same parameter, customerInfo, and that parameter has a defined type of customerInfoType. (Hey all you TypeScript devs! ??) Take note that each method has its own implementation and uses different values from the customerInfo.
+﻿
+With the strategy pattern, you can also dynamically change the strategy being used at run time. That means you'll be able to change the strategy, or method implementation, being used based on user input or the environment the app is running in.
+﻿
+You can also set a default implementation in a simple config.json file like this:
+﻿
+{
+  "paymentMethod": {
+    "strategy": "PayPal"
+  }
+}
+﻿
+Whenever a customer starts going through the checkout process on your website, the default payment method they encounter will be the PayPal implementation which comes from the config.json. This could easily be updated if the customer selects a different payment method.
+﻿
+Now we'll create a file for our checkout process.
+﻿
+const PaymentMethodStrategy = require('./PaymentMethodStrategy')
+const config = require('./config')
+﻿
+class Checkout {
+  constructor(strategy='CreditCard') {
+    this.strategy = PaymentMethodStrategy[strategy]
+  }
+  
+  // do some fancy code here and get user input and payment method
+  
+  changeStrategy(newStrategy) {
+    this.strategy = PaymentMethodStrategy[newStrategy]
+  }
+  
+  const userInput = {
+    name: 'Malcolm',
+    cardNumber: 3910000034581941,
+    emailAddress: 'mac@gmailer.com',
+    country: 'US'
+  }
+  
+  const selectedStrategy = 'Bitcoin'
+  
+  changeStrategy(selectedStrategy)
+  
+  postPayment(userInput) {
+    this.strategy(userInput)
+  }
+}
+﻿
+module.exports = new Checkout(config.paymentMethod.strategy)
+This Checkout class is where the strategy pattern gets to show off. We import a couple of files so we have the payment method strategies available and the default strategy from the config.
+﻿
+Then we create the class with the constructor and a fallback value for the default strategy in case there hasn't been one set in the config. Next we assign the strategy value to a local state variable.
+﻿
+An important method we need to implement in our Checkout class is the ability to change the payment strategy. A customer might change the payment method they want to use and you'll need to be able to handle that. That's what the changeStrategy method is for.
+﻿
+After you've done some fancy coding and gotten all of the inputs from a customer, then you can update the payment strategy immediately based on their input and it dynamically sets the strategy before the payment is sent for processing.
+﻿
+At some point you might need to add more payment methods to your shopping cart and all you'll have to do is add it to the PaymentMethodStrategy class. It'll instantly be available anywhere that class is used.
+﻿
+The strategy design pattern is a powerful one when you are dealing with methods that have multiple implementations. It might feel like you're using an interface, but you don't have to write an implementation for the method every time you call it in a different class. It gives you more flexibility than interfaces.
+
+21. What are the design patterns?
+﻿
+In software engineering, a design pattern is a general repeatable solution to a commonly occurring problem in software design. A design pattern isn't a finished design that can be transformed directly into code. It is a description or template for how to solve a problem that can be used in many different situations.
+
+22. What are the 3 types of design patterns?
+﻿
+- BEHAVIORAL
+- STRUCTURAL
+- CREATIONAL
+
+23. How to organize design patterns?
+﻿
+We classify design patterns by two criteria:
+- PURPOSE: reflects what a pattern does. Patterns can have either creational, structural, or behavioral purpose. Creational patterns concern the process of object creation. Structural patterns deal with the composition of classes or
+objects. Behavioral patterns characterize the ways in which classes or objects interact and distribute responsibility. 
+- SCOPE: primarily to classes or to objects. Class patterns deal with relationships between classes and their subclasses. These relationships are established through
+inheritance, so they are static—fixed at compile-time. Object patterns deal with object relationships, which can be changed at run-time and are more dynamic. Almost
+all patterns use inheritance to some extent. So the only patterns labeled "class patterns" are those that focus on class relationships. Note that most patterns are in the Object scope. 
+
+24. What are the behavioral design patterns?
+﻿
+Behavioral patterns describe interactions between objects and focus on how objects communicate with each other. They can reduce complex flow charts to mere interconnections between objects of various classes. Behavioral patterns are also used to make the algorithm that a class uses simply another parameter that is adjustable at runtime. Behavioral patterns are concerned with algorithms and the assignment of responsibilities between objects. Behavioral patterns describe not just patterns of objects or classes but also the patterns of communication between them. These patterns characterize complex control flow that is difficult to follow at run-time. They shift your focus away from the flow of control to let you concentrate just on the way objects are interconnected. Behavioral class patterns use inheritance to distribute behavior between classes.
+The Template Method is the simpler and more common of the two. A template method is an abstract definition of an algorithm. It defines the algorithm step by step. Each step invokes either an abstract operation or a primitive operation. A subclass fleshes out the algorithm by defining the abstract operations. The other behavioral class pattern is Interpreter pattern, which represents a grammar as a class hierarchy and implements an interpreter as an operation on instances of these classes.
+
+25. What are the creational design patterns?
+﻿
+Creational patterns are used to create objects for a suitable class that serves as a solution for a problem. Generally when instances of several different classes are available. They are particularly useful when you are taking advantage of polymorphism and need to choose between different classes at runtime rather than compile time.
+Creational patterns support the creation of objects in a system. Creational patterns allow objects to be created in a system without having to identify a specific class type in the code, so you do not have to write large, complex code to instantiate an object. It does this by having the subclass of the class create the objects. However, this can limit the type or number of objects that can be created within a system.
+
+26. What are the structural design patterns?
+﻿
+Structural patterns form larger structures from individual parts, generally of different classes.
+Structural patterns vary a great deal depending on what sort of structure is being created for what purpose.
+Structural patterns are concerned with how classes and objects are composed to form larger structures.
+Structural class patterns use inheritance to compose interfaces or implementations. As a simple example, consider how multiple inheritance mixes two or more classes into one. The result is a class that combines the properties of its parent classes. This pattern is particularly useful for making independently developed class libraries work together. Another example is the class form of the Adapter Pattern. In general, an adapter makes one interface (the adaptee's) conform to another, thereby providing a uniform abstraction of different interfaces. A class adapter accomplishes this by inheriting privately from an adaptee class. The adapter then expresses its interface in terms of the adaptee's.
+The link below will reinforce your knowledge of the three types of design patterns.
+
+27. What it is important to study design patterns?
+﻿
+- Experts in software architecture and design are highly paid, because they know how to create designs that are flexible, elegant, and reusable.
+- You become an expert through experience, reusing solutions that worked for you before.
+- Patterns describe solutions to design problems that occur over and over again.
+- Patterns also record design decisions, alternatives, and trade-offs gained from experience.
+- Once you know the pattern, many design decisions follow.
+- Knowing patterns helps you get designs right faster.
+- Knowing the vocabulary surrounding patterns helps communication between designers, and can ease the documentation effort.
+
+28. How to choose the right design pattern?
+﻿
+A key misconception in today's coding world is that patterns are building blocks. You take an AbstractFactory here and a Flyweight there and maybe a Singleton over there and connect them together with XML and presto, you've got a working application.
+﻿
+Patterns are not building blocks
+﻿
+A pattern is something that you use when you find that you've got a problem - you need some flexibility that the pattern provides, or that you've stumbled across when you are making a little language in the config file and you say "wait a moment, stop, this is its own interpreter that I'm writing - this is a known and solved problem, use an Interpreter pattern."
+﻿
+But note there, that it's something that you discover in your code, not something you start out with. The creators of Java didn't say "Oh, we'll put a Flyweight in the Integer" at the start, but rather realized a performance issue that could be solved by a flyweight.
+﻿
+And thus, there's no "flow chart" that you use to find the right pattern. The pattern is a solution to a specific type of problem that has been encountered again and again and the key parts of it distilled into a Pattern.
+﻿
+Starting out with the Pattern is like having a solution and looking for a problem. This is a bad thing: it leads to over engineering and ultimately inflexibility in design.
+﻿
+As you are writing code, when you realize that you're writing a Factory, you can say "ah ha! that's a factory I'm about to write" and use your knowledge of knowing the Factory pattern to rapidly write the next bit of code without trying to rediscover the Factory pattern. But you don't start out with "I've got a class here, I'll write a factory for it so that it can be flexible" — because it won't.
+﻿
+Here's an excerpt from an interview with Erich Gamma (of Gamma, Helm, Johnson, and Vissides): How to Use Design Patterns:
+﻿
+"Trying to use all the patterns is a bad thing, because you will end up with synthetic designs—speculative designs that have flexibility that no one needs. These days software is too complex. We can't afford to speculate what else it should do. We need to really focus on what it needs. That's why I like refactoring to patterns. People should learn that when they have a particular kind of problem or code smell, as people call it these days, they can go to their patterns toolbox to find a solution."
+﻿
+The best help for the "what to use, when" is likely the Wikipedia page for software design pattern - the "Classification and list" section describes the category each pattern is in and what it does. There's no flowchart; the description there is probably the best you'll find as a short snippet for "what to use, when."
+﻿
+Note that you'll find different patterns in different areas of programming. Web design has its own set of patterns while JEE (not web design) has another set of patterns. The patterns for financial programming are completely different to those for stand alone application UI design.
+﻿
+So any attempt to list them all is inherently incomplete. You find one, figure out how to use it and then it eventually becomes second nature and you don't need to think about how or when to use it ever again.
+
+29. How design patterns solve design problems?
+﻿
+Design patterns help you choose design alternatives that make a system reusable and avoid alternatives that compromise reusability. Design patterns can even improve the documentation and maintenance of existing systems by furnishing an explicit specification of class and object interactions and their underlying intent. Design patterns provide general solutions, documented in a format that doesn't require specifics tied to a particular problem. In addition, patterns allow developers to communicate using well-known, well understood names for software interactions.
+
+30. Which design pattern should you use and when?
+﻿
+There's no one right answer for when a particular design or design pattern should be used, you need to build up experience in using and implementing them in order to know when and where to use which pattern. Experience. Learn the patterns and real-world examples of their uses.
+
+31. GLOSSARY:
+﻿
+-subclass: a class that inherits from another class. In C++, a subclass is called a derived class.
+- subsystem: an independent group of classes that collaborate to fulfill a set of responsibilities.
+- subtype: a type is a subtype of another if its interface contains the interface of the other type.
+- supertype: the parent type from which a type inherits.
+- toolkit: a collection of classes that provides useful functionality but does not define the design of an application.
+- type: the name of a particular interface.
+- white-box reuse: a style of reuse based on class inheritance. A subclass reuses the
+interface and implementation of its parent class, but it may have access to otherwise private aspects of its parent.
+- parameterized type: a type that leaves some constituent types unspecified. The unspecified types are supplied as parameters at the point of use. In C++, parameterized
+types are called templates.
+- parent class: the class from which another class inherits. Synonyms are superclass (Smalltalk), base class (C++), and ancestor class.
+- polymorphism: the ability to substitute objects of matching interface for one another at run-time.
+- private inheritance: in C++, a class inherited solely for its implementation.
+- protocol: extends the concept of an interface to include the allowable sequences of requests.
+- receiver: the target object of a request.
+request. An object performs an operation when it receives a corresponding request from another object. A common synonym for request is message.
+- signature: an operation's signature defines its name, parameters, and return value.
+- metaclass: classes are objects in Smalltalk. A metaclass is the class of a class object.
+- mixin class: a class designed to be combined with other classes through inheritance. Mixin classes are usually abstract.
+- object: a run-time entity that packages both data and the procedures that operate on that data.
+- object composition: assembling or composing objects to get more complex behavior.
+- object diagram: a diagram that depicts a particular object structure at run-time.
+- object reference: a value that identifies another object.
+operation. An object's data can be manipulated only by its operations. An object performs an operation when it receives a request. In C++, operations are
+called member functions. Smalltalk uses the term method.
+- overriding: redefining an operation (inherited from a parent class) in a subclass.
+- framework: a set of cooperating classes that makes up a reusable design for a specific class of software. A framework provides architectural guidance by partitioning the design into abstract classes and defining their
+responsibilities and collaborations. A developer customizes the framework to a particular application by subclassing and composing instances of framework classes.
+- friend class: in C++, a class that has the same access rights to the operations and data of a class as that class itself.
+- inheritance: a relationship that defines one entity in terms of another. Class inheritance defines a new class in terms of one or more parent classes. The new class inherits its interface and implementation from its parents.
+The new class is called a subclass or (in C++) a derived class. Class inheritance combines interface inheritance and implementation inheritance. Interface inheritance defines a new interface in terms of one or more existing interfaces. Implementation inheritance defines a new implementation in terms of one or more existing implementations.
+- instance variable: a piece of data that defines part of an object's representation. C++ uses the term data member.
+- interaction diagram: a diagram that shows the flow of requests between objects.
+- interface: the set of all signatures defined by an object's operations. The interface describes the set of requests to which an object can respond.
+- design pattern: a design pattern systematically names, motivates, and explains a general design that addresses a recurring design problem in object-oriented
+systems. It describes the problem, the solution, when to apply the solution, and its consequences. It also gives implementation hints and examples. The solution is a general arrangement of objects and classes that solve the
+problem. The solution is customized and implemented to solve the problem in a particular context.
+- destructor: in C++, an operation that is automatically invoked to finalize an object that is about to be deleted.
+- dynamic binding: the run-time association of a request to an object and one of its
+operations. In C++, only virtual functions are dynamically bound.
+- encapsulation: the result of hiding a representation and implementation in an object. The representation is not visible and cannot be accessed directly from outside the object. Operations are the only way to access and modify an object's representation.
+- black-box reuse: a style of reuse based on object composition. Composed objects reveal no internal details to each other and are thus analogous to "black boxes."
+- class: a class defines an object's interface and implementation. It specifies the object's internal representation and defines the operations the object
+can perform.
+- class diagram: a diagram that depicts classes, their internal structure and operations, and the static relationships between them.
+- class operation: an operation targeted to a class and not to an individual object. In C++, class operations are are called static member functions.
+- concrete class: A class having no abstract operations. It can be instantiated.
+- constructor: In C++, an operation that is automatically invoked to initialize new instances.
+- coupling: The degree to which software components depend on each other.
+- delegation: an implementation mechanism in which an object forwards or delegates a request to another object. The delegate carries out the request on behalf
+of the original object.
+- abstract class: a class whose primary purpose is to define an interface. An abstract class defers some or all of its implementation to subclasses. An abstract
+class cannot be instantiated.
+- abstract coupling: given a class A that maintains a reference to an abstract class B, class A is said to be abstractly coupled to B. We call this abstract coupling
+because A refers to a type of object, not a concrete object.
+- abstract operation: an operation that declares a signature but doesn't implement it. In
+C++, an abstract operation corresponds to a pure virtual member function.
+- acquaintance relationship: aclass that refers to another class has an acquaintance with that class.
+- aggregate object: an object that's composed of subobjects. The subobjects are called the
+aggregate's parts, and the aggregate is responsible for them.
+- aggregation relationship: the relationship of an aggregate object to its parts. A class defines
+this relationship for its instances (e.g., aggregate objects).
+
 
 
