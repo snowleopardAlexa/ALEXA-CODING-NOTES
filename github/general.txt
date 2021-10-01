@@ -127,3 +127,15 @@ Intead of writing git log --oneline --graph --decorate --all such a long command
 - git bisect good 4jdjd885
   Starting and ending point, bisect will cut the    project in half and find the bad commit. 
 - git bisect good
+
+21. How to revert changes with Git?
+
+- git revert dfh4666 - command number. It references to the commit. 
+
+22. Why commit relationships matter?
+
+Each commit has a special relationship with the commit made before it. It also refers to a parent commit before it. Commiting frequently gives us the advantage of troubleshooting commits that have broken something in the build process and being able to revert back without loosing too much work. 
+
+23. Where does exactly git store all of its data?
+
+Git stores data in .git directory. If we type ls this is going to show us a list of our files and folders inside of our git repository, but there is no .git directory there. That is because it's what called the hidden directory. We can type ls -al, which is a command that shows us a list of all of our files, even the hidden files inside of our git repository. There is also the config. The config file contains the configuration options that are specific to this repository. Now this is where we can tell git to store our user name, our password for identification when making commits or we can tell git to create shortcuts to specific git commands. The head file points to the branch that we're currently checked out to. The head is our lens. It points to whatever branch we're currently working on. The index is another important file. This is also referred to as that staging area. This is a file where git stores the staging area information before a commit is made.  This is a directory where git stores the pointers to the object data in the project. These pointers are the branches.
