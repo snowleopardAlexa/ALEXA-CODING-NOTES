@@ -106,4 +106,237 @@ categoryDropdown.subscribe(brandDropdown)
 
 What this file shows us is that we have 3 drop-downs that are subscribers to the category drop-down observable. Then we subscribe each of those drop-downs to the observer. Whenever the category of the observer is updated, it will send out the value to every subscriber which will update the individual drop-down lists instantly.
 
-3. 
+3. What is the Decorator design pattern?
+
+Using the decorator design pattern is fairly simple. You can have a base class with methods and properties that are present when you make a new object with the class. Now say you have some instances of the class that need methods or properties that didn't come from the base class.
+
+You can add those extra methods and properties to the base class, but that could mess up your other instances. You could even make sub-classes to hold specific methods and properties you need that you can't put in your base class.
+
+Either of those approaches will solve your problem, but they are clunky and inefficient. That's where the decorator pattern steps in. Instead of making your code base ugly just to add a few things to an object instance, you can tack on those specific things directly to the instance.
+
+So if you need to add a new property that holds the price for an object, you can use the decorator pattern to add it directly to that particular object instance and it won't affect any other instances of that class object.
+
+Have you ever ordered food online? Then you've probably encountered the decorator pattern. If you're getting a sandwich and you want to add special toppings, the website isn't adding those toppings to every instance of sandwich current users are trying to order.
+
+Here's an example of a customer class:
+
+class Customer {
+  constructor(balance=20) {
+    this.balance = balance
+    this.foodItems = []
+  }
+  
+  buy(food) {
+    if (food.price) < this.balance {
+      console.log('you should get it')
+      this.balance -= food.price
+      this.foodItems.push(food)
+    }
+    else {
+      console.log('maybe you should get something else')
+    }
+  }
+}
+
+module.exports = Customer
+
+And here's an example of a sandwich class:
+
+class Sandwich {
+  constructor(type, price) {
+    this.type = type
+    this.price = price
+  }
+  
+  order() {
+    console.log(`You ordered a ${this.type} sandwich for $ ${this.price}.`)
+  }
+}
+
+class DeluxeSandwich {
+  constructor(baseSandwich) {
+    this.type = `Deluxe ${baseSandwich.type}`
+    this.price = baseSandwich.price + 1.75
+  }
+}
+
+class ExquisiteSandwich {
+  constructor(baseSandwich) {
+    this.type = `Exquisite ${baseSandwich.type}`
+    this.price = baseSandwich.price + 10.75
+  }
+  
+  order() {
+    console.log(`You ordered an ${this.type} sandwich. It's got everything you need to be happy for days.`)
+  }
+}
+
+module.exports = { Sandwich, DeluxeSandwich, ExquisiteSandwich }
+
+This sandwich class is where the decorator pattern is used. We have a Sandwich base class that sets the rules for what happens when a regular sandwich is ordered. Customers might want to upgrade sandwiches and that just means an ingredient and price change.
+
+You just wanted to add the functionality to increase the price and update the type of sandwich for the DeluxeSandwich without changing how it's ordered. Although you might need a different order method for an ExquisiteSandwich because there is a drastic change in the quality of ingredients.
+
+The decorator pattern lets you dynamically change the base class without affecting it or any other classes. You don't have to worry about implementing functions you don't know, like with interfaces, and you don't have to include properties you won't use in every class.
+
+Now if we'll go over an example where this class is instantiated as if a customer was placing a sandwich order.
+
+const { Sandwich, DeluxeSandwich, ExquisiteSandwich } = require('./Sandwich')
+const Customer = require('./Customer')
+
+const cust1 = new Customer(57)
+
+const turkeySandwich = new Sandwich('Turkey', 6.49)
+const bltSandwich = new Sandwich('BLT', 7.55)
+
+const deluxeBltSandwich = new DeluxeSandwich(bltSandwich)
+const exquisiteTurkeySandwich = new ExquisiteSandwich(turkeySandwich)
+
+cust1.buy(turkeySandwich)
+cust1.buy(bltSandwich)
+
+4. What are 23 design patterns?
+
+- CREATIONAL: Factory Method, Abstract Factory, Builder, Prototype, Singleton.
+- STRUCTURAL: Adapter, Bridge, Composite, Decorator, Facade, Flyweight, Proxy.
+- BEHAVIORAL: Interpreter Template Method, Chain of Responsability, Command, Iterator, Mediator, Memento, Observer, State, Strategy, Visitor.
+
+5. What are the easiest design pattern to study?
+
+Adapter, Decorator, Composite, Observer, Template Method, Factory Method, Abstract Factory, Strategy.
+
+6. How to structure OOP programs?
+
+Imagine running a dog sitting camp, with hundreds of pets, and you have to keep track of the names, ages, and days attended for each pet. How would you design simple, reusable software to model the dogs?
+
+With hundreds of dogs, it would be inefficient to write unique code for each dog. Below we see what that might look like with objects rufus and fluffy.
+
+//Object of one individual dog
+var rufus = {
+    name: "Rufus",
+    birthday: "2/1/2017",
+    age: function() {
+        return Date.now() - this.birthday;
+    },
+    attendance: 0
+}
+
+//Object of second individual dog
+var fluffy = {
+    name: "Fluffy",
+    birthday: "1/12/2019",
+    age: function() {
+        return Date.now() - this.birthday;
+    },
+    attendance: 0
+}
+
+As you can see above, there is a lot of duplicated code between both objects. The age() function appears in each object. Since we want the same information for each dog, we can use objects and classes instead.
+
+Grouping related information together to form a class structure makes the code shorter and easier to maintain.
+
+In the dogsitting example, here’s how a programmer could think about organizing an OOP:
+
+Create a parent class for all dogs as a blueprint of information and behaviors (methods) that all dogs will have, regardless of type.
+
+Create child classes to represent different subcategories of dog under the generic parent blueprint.
+
+Add unique attributes and behaviors to the child classes to represent differences
+
+Create objects from the child class that represent dogs within that subgroup
+
+The diagram below represents how to design an OOP program: grouping the related data and behaviors together to form a simple template then creating subgroups for specialized data and behavior.
+
+The Dog class is a generic template, containing only the structure about data and behaviors common to all dogs.
+
+We then create two child classes of Dog, HerdingDog and TrackingDog. These have the inherited behaviors of Dog (bark()) but also behavior unique to dogs of that subtype.
+
+Finally, we create objects of the HerdingDog type to represent the individual dogs Fluffy and Maisel.
+
+We can also create objects like Rufus that fit under the broad class of Dog but do not fit under either HerdingDog or TrackingDog.
+
+7. What are the building blocks of OOP?
+
+- classes
+- objects
+- methods
+- attributes
+
+8. What is OOP?
+
+Object Oriented programming (OOP) is a programming paradigm that relies on the concept of classes and objects. It is used to structure a software program into simple, reusable pieces of code blueprints (usually called classes), which are used to create individual instances of objects. There are many object-oriented programming languages including JavaScript, C++, Java, and Python.
+
+9. What are the benefits of OOP?
+
+- OOP models complex things as reproducible, simple structures
+- Reusable, OOP objects can be used across programs
+- Allows for class-specific behavior through polymorphism
+- Easier to debug, classes often contain all applicable information to them
+- Secure, protects information through encapsulation
+
+10. What are the objects in OOP?
+
+Objects are instances of classes created with specific data, for example in the code snippet below Rufus is an instance of the Dog class.
+
+class Dog {
+    constructor(name, birthday) {
+        this.name = name;
+        this.birthday = birthday;
+    }
+
+    //Declare private variables
+    _attendance = 0;
+
+    getAge() {
+        //Getter
+        return this.calcAge();
+    }
+
+    calcAge() {
+        //calculate age using today's date and birthday
+        return Date.now() - this.birthday;
+    }
+    
+    bark() {
+        return console.log("Woof!");
+    }
+
+    updateAttendance() {
+        //add a day to the dog's attendance days at the petsitters
+        this._attendance++;
+    }
+}
+
+//instantiate a new object of the Dog class, and individual dog named Rufus
+const rufus = new Dog("Rufus", "2/1/2017");
+
+When the new class Dog is called:
+
+A new object is created named rufus
+The constructor runs name & birthday arguments, and assigns values
+Programming vocabulary:
+
+In JavaScript objects are a type of variable. This may cause confusion, because objects can also be declared without a class template in JavaScript, as shown at the beginning.
+
+Objects have states and behaviors. State is defined by data: things like names, birthday, and other information you’d want to store about a dog. Behaviors are methods, the object can undertake.
+
+11. What are the attributes of OOP?
+
+Attributes are the information that is stored. Attributes are defined in the Class template. When objects are instantiated individual objects contain data stored in the Attributes field.
+
+The state of an object is defined by the data in the object’s attributes fields. For example, a puppy and a dog might be treated differently at pet camp. The birthday could define the state of an object, and allow the software to handle dogs of different ages differently.
+
+12. What are the methods of OOP?
+
+Methods represent behaviors. Methods perform actions; methods might return information about an object, or update an object’s data. The method’s code is defined in the class definition.
+
+When individual objects are instantiated, these objects can call the methods defined in the class. In the code snippet below, the bark method is defined in Dog class, and the bark() method is called on the Rufus object.
+
+13. What are the 4 princiles of OOP?
+
+The four pillars of object oriented programming are:
+
+- Inheritance: child classes inherit data and behaviors from parent class
+- Encapsulation: containing information in an object, exposing only selected information
+- Abstraction: only exposing high level public methods for accessing an object
+- Polymorphism: many methods can do the same task
