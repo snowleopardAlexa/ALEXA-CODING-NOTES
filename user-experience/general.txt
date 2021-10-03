@@ -136,3 +136,30 @@ Represents people with disabilities in interviews, talk-aloud sessions, focus gr
 26. What is content strategist?
 
 Works with people whp have disabilities to discover their thought processes and determine key clues to help them navigate and perform actions. 
+
+27. What is information architect?
+
+Knows the labels and terminology for the subject area. 
+
+28. What is interaction designer?
+
+Creates wireframes and prototypes, keeping those with disabilities in mind; specficies flows and sources order where needed. 
+
+29. What is the perfect content?
+
+Ask the people with disabilities what they need, and present the content in a right away. 
+
+30. What does it mean designing for memory issues?
+
+Out of sight, out of mind. Forms must be well-designed, inputs close to each other. Don't let the prompt to dissapear because you forget what to fill in --> placeholders are not the best way! Make sure you have a title above the input that never disappears. 
+
+Date of birth (MM/DD/YYYY):
+input field here...
+
+31. What is the voice recognition software?
+
+Voice recognition software - is used to convert spoken language into text by using speech recognition algorithms. It can be used by people with disabilitties, for in-car systems, in the military, and also by businesses for dictation, or to convert audio and video files into text. 
+
+It is helpful with:
+- dictation: write documents, compose emails, and fill in information.
+- command and control: dragging files, switching programs, and clicking buttons.
