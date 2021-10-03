@@ -68,3 +68,40 @@ Supported by most browsers, familiar to your users.
 
 it is normally supported by standard web objects so you'll get better cross-browser capability, especially across mobile devices.
 
+13. Why well-structured navigation is important?
+
+10% of tasks fail due to navigation. 
+- moving around the site
+- understanding where they are
+
+14. Why we should organize site maps differently then navigation?
+
+Site maps are read by users if they can't find the option in the navbar. Make sure they are clear and differently structured than navs. 
+
+15. What is Fitts' law?
+
+It's faster to hit larger targets closer to you than smaller targets farther from you. 
+
+16. Navigation is used for moving around the site and to help visitors understand where they are within the site.
+
+TRUE
+
+17. Which of the following is the best design rule that you can apply to menus?
+
+Menus should be no longer than nine items.
+
+18. When adding search to your site, _____ is generally the standard location for the search field.
+
+the top right-hand corner of the page 
+
+19. How to manage the flow of accessibility?
+
+USER MUST BE ABLE TO USE KEYBOARD OVER THE MOUSE. PERIOD. HE CAN USE ALSO A MOUSE, BUT KEYBOARD IS THE KEY. 
+
+Keyboard access must be properly designed. 
+
+Design flow that goes from input form to buttons and then to search button. Why? User must be presented with options before clicking the button, especially blind users that don't see the form. 
+
+20. How to create visual interactions?
+
+Make sure there are multiple ways of finding out the same piece of information. 
