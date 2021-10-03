@@ -186,3 +186,40 @@ About Us
 36. How to use graphics?
 
 Use graphics for explanation, not decoration. They should be information rich and matching the website and design. Avoid purely decorative photos in the content of the body. 
+
+37. Best uses for interactive content include all of the following, except:
+
+address repeat visitors to gamify their experience, since they've seen the content several times already.
+
+38. What are the elements every page should have?
+
+- page title: 64 characters or less, unique to the page, description, topic area.
+- articles, navbar, footer.
+
+39. What is progressive navigation?
+
+Your site exists to get information to customers. 
+Homepage --> About, Products, News, Contact
+
+40. How to arrange content?
+- scrolling
+- sequential
+- splitting
+
+Reasons not to split:
+- if it causes confusion
+- if it will be printed
+Reasons to split:
+- if it's an article
+- if it's a photo gallery
+- if it has step-by-step instructions
+
+41. Since users can arrive to your site on any page, and not necessarily the homepage, it is important that every page has
+
+- a short, concise description of the purpose of your site.
+- your site's logo, name, and/or tagline hyperlinked to the homepage.
+- a unique page title.
+
+42. If you think a detail page needs a menu entry,
+
+it's probably a category rather than a detail page.
