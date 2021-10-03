@@ -278,3 +278,53 @@ headings and bulleted lists
 50. People are about 25% slower reading from a computer screen than from paper. For most sites, they're reading
 
 to achieve some kind of goal.
+
+51. How to write the homepage?
+
+- welcome users with fresh content
+- orient users with high-level information
+- provide links to top tasks
+- include a call to action
+
+52. The homepage is the place to
+
+- provide links to top tasks.
+- orient users with high-level information.
+- welcome users with fresh content.
+
+53. Homepages often end up as a place to show off your most recent content. It is important, however, that the page
+
+has some relatively consistent content that describes who you are and what you do.
+
+54. To reinforce what visitors learn in one location throughout their experience of using your site,
+
+be consistent using the same locations to display the navigation menu and search box on your homepage template as you do for the rest of the pages.
+
+55. The homepage should be used to
+
+set users' research in motion. Visitors should be able to say generally what the site is about after seeing it for five seconds.
+
+56. All detail pages should
+
+- describe the topic of the product or post without resorting to flowery language or hype.
+- describe the topic of the product or post factually.
+- provide additional information that helps in the decision making process.
+
+57. What is interactive content?
+
+Interactive content means items that you place on your site that allow visitors to use the mouse or touch gestures to move items around, rearrange them, or change options to configure something. 
+- animations
+- many people can't use interactive content: disabilities, plugins turned off in the browser
+- offer also non-dynamic content to interactive content
+
+58. Why should you carefully control the amount of content on a page?
+
+- More resources on a page require more bandwidth.
+- Images/videos should simply tell a story or get across your main concepts.
+- You need to ensure that the content you're choosing serves the right purpose.
+
+59. Decorative elements on your site should do or be all of the following, except: 
+
+displayed in the body area of your pages.
+
+60. 
