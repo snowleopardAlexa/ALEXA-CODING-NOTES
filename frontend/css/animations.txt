@@ -1,0 +1,21 @@
+1. What is CSS Transform?
+
+Transform changes the shape and position of the affected content without disruptng the normal document flow by modifying the coordinate space. 
+
+transform: translateX(300px) --> we move 300px object on the horizontal oxis, we move it 300px to the right. It refers to the container.
+
+transform: translateX(100%) --> we move the same distance to the right what is the size of the object. % refers to the object, not to the container. 
+
+transform: translate(100px, 200px); --> it moves to the right and down. We moved it on both oxis.
+
+transform: translate(100px, 200px) scale(2) rotate(45deg); --> we move to the right and bottom, and then we doubled the size and rotate at the angle of 45 degrees. 
+
+
+TRANSFORM WILL CHANGE HOW THE OBJECT APPEARS, BUT THEY WILL NOT CREATE AN ANIMATION.
+
+THE ORDER IS IMPORTANT! THE ORDER OF TRANSFORM ACTION WILL AFFECT THE FINAL RESULT.
+
+transform: rotate(46deg) scale(2) translate(100px, 200px); 
+
+
+2. 
