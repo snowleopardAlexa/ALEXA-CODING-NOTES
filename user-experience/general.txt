@@ -37,3 +37,34 @@ You should speak clearly from the beginning.
 You structure the content based on popularity, promotion, location, time, 
 alphabetical order. What's the most important to users must be the most 
 visible on the page. 
+
+7. These days, if your content is below the fold (it doesn't display without scrolling), then it is unlikely that visitors will see it.
+
+FALSE
+
+8. How can you make sure that your site helps people quickly orient themselves and work out whether you have the information they want?
+
+- Have a clear site tagline.
+- Each page should use a descriptive page heading.
+- Make sure your navigation is descriptive, either of items people can find on the site or tasks they can perform.
+
+9. What is consistent design?
+
+Having the same response whenever people perform an action.
+
+10. What is standard design?
+
+Using elements the same way that major sites do.
+Supported by most browsers, familiar to your users.
+
+11. What is simple design?
+
+- clear headings, fonts, photos.
+- images should help to understand your content.
+- generic stock photos don't gibe your visitors any clues.
+- advertisements should be relevant.
+
+12. Standard design is preferable because
+
+it is normally supported by standard web objects so you'll get better cross-browser capability, especially across mobile devices.
+
