@@ -1,0 +1,39 @@
+1. The content you write should be...
+
+be simple to read and high in facts.
+
+2. What are the cognitive issues? How to design for the people with cognitive issues?
+
+- memory
+- problem solving
+- attention and focus
+- literacy and reading
+- visual comprehension
+- verbal comprehension
+- design for forgetfullness
+- write the plain language
+- provide predictability in your interface
+
+3. What is the persona?
+
+Every user wants something different from the website. 
+Make sure you take into consideration attributes, values, goals, 
+and concerns of the users while designing the interface.
+
+4. Why the people use the web?
+
+The people use the web to find the information. 
+88% search, 11% direct. 
+
+5. What causes the people to leave the sites?
+
+Anything that stops visitors from finding the information they're looking for. 
+Overcomplicated sites, overdistracting advertisements. Your visitors are 
+looking for information. The content needs to make sense to them. 
+You should speak clearly from the beginning. 
+
+6. What should you structure the content?
+
+You structure the content based on popularity, promotion, location, time, 
+alphabetical order. What's the most important to users must be the most 
+visible on the page. 
