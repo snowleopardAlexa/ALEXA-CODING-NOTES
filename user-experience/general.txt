@@ -1,0 +1,330 @@
+1. The content you write should be...
+
+be simple to read and high in facts.
+
+2. What are the cognitive issues? How to design for the people with cognitive issues?
+
+- memory
+- problem solving
+- attention and focus
+- literacy and reading
+- visual comprehension
+- verbal comprehension
+- design for forgetfullness
+- write the plain language
+- provide predictability in your interface
+
+3. What is the persona?
+
+Every user wants something different from the website. 
+Make sure you take into consideration attributes, values, goals, 
+and concerns of the users while designing the interface.
+
+4. Why the people use the web?
+
+The people use the web to find the information. 
+88% search, 11% direct. 
+
+5. What causes the people to leave the sites?
+
+Anything that stops visitors from finding the information they're looking for. 
+Overcomplicated sites, overdistracting advertisements. Your visitors are 
+looking for information. The content needs to make sense to them. 
+You should speak clearly from the beginning. 
+
+6. What should you structure the content?
+
+You structure the content based on popularity, promotion, location, time, 
+alphabetical order. What's the most important to users must be the most 
+visible on the page. 
+
+7. These days, if your content is below the fold (it doesn't display without scrolling), then it is unlikely that visitors will see it.
+
+FALSE
+
+8. How can you make sure that your site helps people quickly orient themselves and work out whether you have the information they want?
+
+- Have a clear site tagline.
+- Each page should use a descriptive page heading.
+- Make sure your navigation is descriptive, either of items people can find on the site or tasks they can perform.
+
+9. What is consistent design?
+
+Having the same response whenever people perform an action.
+
+10. What is standard design?
+
+Using elements the same way that major sites do.
+Supported by most browsers, familiar to your users.
+
+11. What is simple design?
+
+- clear headings, fonts, photos.
+- images should help to understand your content.
+- generic stock photos don't gibe your visitors any clues.
+- advertisements should be relevant.
+
+12. Standard design is preferable because
+
+it is normally supported by standard web objects so you'll get better cross-browser capability, especially across mobile devices.
+
+13. Why well-structured navigation is important?
+
+10% of tasks fail due to navigation. 
+- moving around the site
+- understanding where they are
+
+14. Why we should organize site maps differently then navigation?
+
+Site maps are read by users if they can't find the option in the navbar. Make sure they are clear and differently structured than navs. 
+
+15. What is Fitts' law?
+
+It's faster to hit larger targets closer to you than smaller targets farther from you. 
+
+16. Navigation is used for moving around the site and to help visitors understand where they are within the site.
+
+TRUE
+
+17. Which of the following is the best design rule that you can apply to menus?
+
+Menus should be no longer than nine items.
+
+18. When adding search to your site, _____ is generally the standard location for the search field.
+
+the top right-hand corner of the page 
+
+19. How to manage the flow of accessibility?
+
+USER MUST BE ABLE TO USE KEYBOARD OVER THE MOUSE. PERIOD. HE CAN USE ALSO A MOUSE, BUT KEYBOARD IS THE KEY. 
+
+Keyboard access must be properly designed. 
+
+Design flow that goes from input form to buttons and then to search button. Why? User must be presented with options before clicking the button, especially blind users that don't see the form. 
+
+20. How to create visual interactions?
+
+Make sure there are multiple ways of finding out the same piece of information. 
+
+21. What is proximity in design?
+
+Pieces of information must be chunked appropriately and be placed together. 
+
+22. What are the expectations?
+
+Make sure that if something suggests it is a link, then it must be a link. Don't confuse the users. Buttons are buttons. Be careful for automatic JavaScript complete in the form - auto advancing field in the screen readers. It'a annoying for the people with the disabilities. 
+
+23. What type of people's disabilities we need to consider while designing the interface?
+
+- visual
+- auditory
+- mobility & dexterity
+- cognitive
+
+24. What are accessibility views?
+
+- never autoplay the content on the website
+- write good titles of the web
+- use link
+- use button
+- use div and allow this div to be clickable
+
+25. What is user research team?
+
+Represents people with disabilities in interviews, talk-aloud sessions, focus groups, usabilitytesting, and focused accessibility testing. 
+
+26. What is content strategist?
+
+Works with people whp have disabilities to discover their thought processes and determine key clues to help them navigate and perform actions. 
+
+27. What is information architect?
+
+Knows the labels and terminology for the subject area. 
+
+28. What is interaction designer?
+
+Creates wireframes and prototypes, keeping those with disabilities in mind; specficies flows and sources order where needed. 
+
+29. What is the perfect content?
+
+Ask the people with disabilities what they need, and present the content in a right away. 
+
+30. What does it mean designing for memory issues?
+
+Out of sight, out of mind. Forms must be well-designed, inputs close to each other. Don't let the prompt to dissapear because you forget what to fill in --> placeholders are not the best way! Make sure you have a title above the input that never disappears. 
+
+Date of birth (MM/DD/YYYY):
+input field here...
+
+31. What is the voice recognition software?
+
+Voice recognition software - is used to convert spoken language into text by using speech recognition algorithms. It can be used by people with disabilitties, for in-car systems, in the military, and also by businesses for dictation, or to convert audio and video files into text. 
+
+It is helpful with:
+- dictation: write documents, compose emails, and fill in information.
+- command and control: dragging files, switching programs, and clicking buttons.
+
+32. What are screen magnifiers?
+
+Screen magnifier - is a software application that increases the size of text and graphics on your computer screen. You can use the mouse or keyboard shortcuts to position your cursor where you want to increase the text or image size for better visibility. 
+
+LOW VISION:
+- can only see a small portion of the screen
+
+33. What are the screen readers?
+
+A screen reader is a form of assistive technology that renders text and image content as speech or braille output. Screen readers are essential to people who are blind, and are useful to people who are visually impaired, illiterate, or have a learning disability. 
+
+34. The best thing you can do is to use high quality photos, and sometimes even videos, to get visitors as close as possible to a showroom or shop experience.
+
+TRUE
+
+35. _____ is the best page for establishing visitors' trust in what you offer.
+
+About Us
+
+36. How to use graphics?
+
+Use graphics for explanation, not decoration. They should be information rich and matching the website and design. Avoid purely decorative photos in the content of the body. 
+
+37. Best uses for interactive content include all of the following, except:
+
+address repeat visitors to gamify their experience, since they've seen the content several times already.
+
+38. What are the elements every page should have?
+
+- page title: 64 characters or less, unique to the page, description, topic area.
+- articles, navbar, footer.
+
+39. What is progressive navigation?
+
+Your site exists to get information to customers. 
+Homepage --> About, Products, News, Contact
+
+40. How to arrange content?
+- scrolling
+- sequential
+- splitting
+
+Reasons not to split:
+- if it causes confusion
+- if it will be printed
+Reasons to split:
+- if it's an article
+- if it's a photo gallery
+- if it has step-by-step instructions
+
+41. Since users can arrive to your site on any page, and not necessarily the homepage, it is important that every page has
+
+- a short, concise description of the purpose of your site.
+- your site's logo, name, and/or tagline hyperlinked to the homepage.
+- a unique page title.
+
+42. If you think a detail page needs a menu entry,
+
+it's probably a category rather than a detail page.
+
+43. If your visitors come in from a search engine, then the site's navigation components, like will help them quickly work their way up or down the levels of content to find exactly what they need.
+
+the site's navigation components, like breadcrumbs or related links
+
+44. How people read on the web?
+
+- put a summary of the page in the first paragraph
+- make sure that page headings convey useful information
+- frontload headings and bullets points with the information-carrying words. 
+
+Lower literacy readers read every word. Instead, they skip whole chunks of text. 43% of adults in the US have lower literacy.
+
+Keep text simple and short. 
+
+45. All of the following are advisable practices when formatting pages for information exchange, except:
+
+make links the same color and formatting as other general text.
+
+46. How to write a good content?
+
+- Print Layout - 25% more info is read by users than from the screen.
+- Web Layout - try to write 50% less text than you would write on the paper. 
+- cut down the trash, favor short words, sentences, and paragraphs --> make sure you know what type of audience do you apply. If you talk to scientists, use high-scientific language. 
+
+47. How to format the page?
+
+- never use more than 3 levels of headings
+- provide a summary for each page
+- important details
+- general background
+- it's ok if you tell entire story in one sentence
+- start with the conclusion
+- explain the most important facts
+- give background detail
+- use bullets/numbered lists
+- bullets are for unordered content
+- readers love lists
+- keywords should come first
+- clear headings
+- informative summaries
+- concise body text
+
+48. To entice visitors to spend more time on a page, it is best to include as much marketing hype and as many sales pitches as possible.
+
+FALSE
+
+49. _____ get the most attention, and subsequently, it's typically _____ that get read next.
+
+First paragraphs of the page 
+headings and bulleted lists
+
+50. People are about 25% slower reading from a computer screen than from paper. For most sites, they're reading
+
+to achieve some kind of goal.
+
+51. How to write the homepage?
+
+- welcome users with fresh content
+- orient users with high-level information
+- provide links to top tasks
+- include a call to action
+
+52. The homepage is the place to
+
+- provide links to top tasks.
+- orient users with high-level information.
+- welcome users with fresh content.
+
+53. Homepages often end up as a place to show off your most recent content. It is important, however, that the page
+
+has some relatively consistent content that describes who you are and what you do.
+
+54. To reinforce what visitors learn in one location throughout their experience of using your site,
+
+be consistent using the same locations to display the navigation menu and search box on your homepage template as you do for the rest of the pages.
+
+55. The homepage should be used to
+
+set users' research in motion. Visitors should be able to say generally what the site is about after seeing it for five seconds.
+
+56. All detail pages should
+
+- describe the topic of the product or post without resorting to flowery language or hype.
+- describe the topic of the product or post factually.
+- provide additional information that helps in the decision making process.
+
+57. What is interactive content?
+
+Interactive content means items that you place on your site that allow visitors to use the mouse or touch gestures to move items around, rearrange them, or change options to configure something. 
+- animations
+- many people can't use interactive content: disabilities, plugins turned off in the browser
+- offer also non-dynamic content to interactive content
+
+58. Why should you carefully control the amount of content on a page?
+
+- More resources on a page require more bandwidth.
+- Images/videos should simply tell a story or get across your main concepts.
+- You need to ensure that the content you're choosing serves the right purpose.
+
+59. Decorative elements on your site should do or be all of the following, except: 
+
+displayed in the body area of your pages.
+
+60. 
