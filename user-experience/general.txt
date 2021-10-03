@@ -163,3 +163,26 @@ Voice recognition software - is used to convert spoken language into text by usi
 It is helpful with:
 - dictation: write documents, compose emails, and fill in information.
 - command and control: dragging files, switching programs, and clicking buttons.
+
+32. What are screen magnifiers?
+
+Screen magnifier - is a software application that increases the size of text and graphics on your computer screen. You can use the mouse or keyboard shortcuts to position your cursor where you want to increase the text or image size for better visibility. 
+
+LOW VISION:
+- can only see a small portion of the screen
+
+33. What are the screen readers?
+
+A screen reader is a form of assistive technology that renders text and image content as speech or braille output. Screen readers are essential to people who are blind, and are useful to people who are visually impaired, illiterate, or have a learning disability. 
+
+34. The best thing you can do is to use high quality photos, and sometimes even videos, to get visitors as close as possible to a showroom or shop experience.
+
+TRUE
+
+35. _____ is the best page for establishing visitors' trust in what you offer.
+
+About Us
+
+36. How to use graphics?
+
+Use graphics for explanation, not decoration. They should be information rich and matching the website and design. Avoid purely decorative photos in the content of the body. 
