@@ -223,3 +223,58 @@ Reasons to split:
 42. If you think a detail page needs a menu entry,
 
 it's probably a category rather than a detail page.
+
+43. If your visitors come in from a search engine, then the site's navigation components, like will help them quickly work their way up or down the levels of content to find exactly what they need.
+
+the site's navigation components, like breadcrumbs or related links
+
+44. How people read on the web?
+
+- put a summary of the page in the first paragraph
+- make sure that page headings convey useful information
+- frontload headings and bullets points with the information-carrying words. 
+
+Lower literacy readers read every word. Instead, they skip whole chunks of text. 43% of adults in the US have lower literacy.
+
+Keep text simple and short. 
+
+45. All of the following are advisable practices when formatting pages for information exchange, except:
+
+make links the same color and formatting as other general text.
+
+46. How to write a good content?
+
+- Print Layout - 25% more info is read by users than from the screen.
+- Web Layout - try to write 50% less text than you would write on the paper. 
+- cut down the trash, favor short words, sentences, and paragraphs --> make sure you know what type of audience do you apply. If you talk to scientists, use high-scientific language. 
+
+47. How to format the page?
+
+- never use more than 3 levels of headings
+- provide a summary for each page
+- important details
+- general background
+- it's ok if you tell entire story in one sentence
+- start with the conclusion
+- explain the most important facts
+- give background detail
+- use bullets/numbered lists
+- bullets are for unordered content
+- readers love lists
+- keywords should come first
+- clear headings
+- informative summaries
+- concise body text
+
+48. To entice visitors to spend more time on a page, it is best to include as much marketing hype and as many sales pitches as possible.
+
+FALSE
+
+49. _____ get the most attention, and subsequently, it's typically _____ that get read next.
+
+First paragraphs of the page 
+headings and bulleted lists
+
+50. People are about 25% slower reading from a computer screen than from paper. For most sites, they're reading
+
+to achieve some kind of goal.
