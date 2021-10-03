@@ -1,0 +1,141 @@
+1. What are the branch protections in github and what are its options?
+
+Protected branches ensure that collaborators on your repo cannot make irrevocable changes to branches bu requiring pull requests to have at least one approved review before they can be merged. One of the options is to disable force-pushes to all matching branches so it prevents them from being deleted by the devs. 
+
+Options to protect the branch:
+- block direct changes made to main
+- authorized specific devs to have certain functions
+- you can apply it to any branch, not only to the main
+- you can require at least one approving review
+- you can control who merges
+- you can create organization requirements
+- you can create status checks on commits: automated control, consistency with each commit, reduce the amout of bugs pushed to production.- - you can choose who make pulls request
+
+2. What are the pull requestes to production in github?
+
+We make pull requestes when we want to connect/merge the feature branch with the main production branch. The pull request is the sort of changes you have made and you're ready to add them to the production branch. 
+
+3. What is the best pull request habit?
+
+You should open the pull request easly in the process so that you can get the feedback and the discussions going while you continue to make your changes. It will help you to reduce the amount of rework and get you on the agreed-upon path faster. When everything looks great, and everyone has given to you the thumbs up, the next step is to deploy your branch. Always discuss and review commits before deploying it. The deploy system is set up to deploy your feature branch into production. If everything goes well, we now go to the next step in github flow and merge the branch into main. The commits that we made to our feature branch are now the part of the main branch. Those changes are not incorporated into the main branch's timeline. 
+
+4. What is git?
+
+Git is a free and open-source distributed Version Control System (VCS) designed to handle everything from small to large projects with speed and efficiency. 
+
+5. What is github?
+
+Github is a collaboration platform built on top of Git. It's the platform where programmers can keep their codes, work in teams, work on projects. 
+
+6. What are the fundamentals of github?
+
+The fundamental goals of github is to create the platform for developers and programmers from around the world where they can create codes, share codes, and grow their coding abilities. Github nurtures a community of developers and supports the open source projects. It is the great platform for beginngers and experienced developers.
+
+7. What is the Continuous Integration in github?
+
+The CI is the practice of automating the integration of code changes from multiple contributors into a single software project. The version control system is also supplemented with other checks like automated code quality tests, syntaxt style review tools, and more. The CI adheres to your team's quality standards, reduces context switching, improves consistency for testing, reduces bugs in production. 
+
+8. What is the github workflow?
+
+There is one branch by default - MAIN. It is called the production branch. Any changes that occurs here are live in the production. The github workflow represents the main branch - feature branch, commits to feature branches, deployment, merging.
+The changes live on the feature branch without affecting the main branch alas you will decide to merge the feature branch to the main branch. Merging is ultimate and it should be done when you're utterly sure you're done with the feature branch. 
+
+9. What is the command line?
+
+The command line gives you the full freedom and flexibility to make the changes that you need. It is text-based user interface to the computer. The command line is a blank line and cursor on the screen, allowing the user to type in instructions for immediate execution. All major operating systems - Windows, Mac, Unix, Linux support command lines. The command line is the only place where:
+- you can run git commands in their full functionality
+- you know git on the command line transfers over to other tools
+- it is less likely to change
+
+10. What are the basic command lines commands?
+
+Type the specific command and then click ENTER to execute. 
+
+Basic command line commands on Mac:
+- pwd: print working directory
+- cd: change directory
+- ls: list files in a directory
+- touch: create an empty file
+- mkdir: create an empty folder/directory
+
+11. How does the project work locally and remotely in github?
+
+- git pull origin main: when you pull down the project locally from GitHub, you have the complete project and all of its history, not just the files you're currently working on. Because of this, Git doesn't need to pull the history from GitHub or the server each time you want to work on a file, it just reads it from your local database, which makes most local operations seem almost instantaneous. For example, if you want to see the changes made to the project several weeks or even several months ago, Git simply checks your local database to run the comparison instead of asking for that information from the remote server. This means that there is very little you can't do with Git when working offline. When working offline, you won't have access to GitHub for issues and pull requests, but every Git function is still available locally on your local computer. Imagine working from home when your VPN fails to connect, or you need to work on a plane or a train where you don't have access to GitHub. This would make life incredibly difficult with many other version control systems, however with Git, you simply make the changes to your local repository of the project, as normal, and then simply commit your changes to GitHub when connected back to the network. But even if you have access to GitHub and you make local changes by making some commits on a branch, GitHub doesn't know about it until you manually tell Git to push your changes up to GitHub. When working with Git, you'll notice that Git is explicit, meaning that Git won't do anything unless you tell Git to perform some action. So any changes you make locally will remain only local on your computer until you explicitly tell Git to push those changes to GitHub on the branch you've made those changes on. Now we've talked about these remote tracking branches before. Know that they are just reference pointers to the state of branches in your remote repository on GitHub. Remote tracking branches act as bookmarks to remind you where your branches on your remote repositories were at the last time you connected with them. Checking out a local branch from a remote branch automatically creates these remote tracking branches. Tracking branches are local branches that have a direct relationship to a remote branch on GitHub. So if you're on a tracking branch and type git push, Git automatically knows which server and branch to push to.
+
+12. What are the git configuration levels?
+
+-- system
+-- global
+-- local
+
+git config --global user.name "username"
+git config --global user.email "email@example.com"
+
+13. Where the files go in github?
+
+Git flow:
+WORKING - STAGING - HISTORY 
+
+project directory/feature branch - working area
+git add . - add changes to you made to the files to the staiging area
+git commit -m - the changes are now the part of the local repo
+git push orign feature branch - the changes now are pushed from local repo to the remote repo
+
+14. How to track the branch in git?
+
+When you create the local branch, the git automatically creates a tracking remote branch corresponding to the local branch. We can say about it as the local branch with direct relationship to a remote branch. Git knows which branch to push to. 
+
+15. What are the best tools for working locally with git?
+
+- GUI Clients: GitKraken - if you don't want to, use command line
+- IDEs: VS, Atom, Xcode, Eclipse
+- Github Desktop
+
+16. What is Continuous Delivery and Continuous Deployment in github?
+
+C. Delivery - is a software engineering approach in which teams produce software in short cycles, ensuring that the software can be released at any time and, when releasing the software, without doing so manually. It aims at building, testing, and releasing software with greater speed and frequency. 
+
+C. Deployment - is a software release process that uses automated testing to validate if changes to a codebase are correct and stable for immediate autonomous deployment to a production environment. The software release cycle has evolved over time. 
+
+17. What is the github flow?
+
+main branch - feature branch - add commits (transparent history) - open a pull request - discuss and review commits - deploy for final changes - merge to main branch to incorporate the changes to your production code.
+
+18. What are github flow problems?
+
+There are many github flow problems inclduing: 
+- code reviews
+- automated testing
+- security concerns
+- merging conflicts
+
+19. How to create git aliases and what they are?
+
+An alias is a shorthand of the command.
+Intead of writing git log --oneline --graph --decorate --all such a long command, we can create an alias - a shorthand of the command. We can use aliases on global settings, in every repo.
+
+- git config --global alias.lol "log --oneline --graph --decorate --all": this is how you create an alias.
+
+- git config --global --list: it lists all config that we setup globally. We can check if our alias worked. 
+
+20. How to find a particular commit in git?
+
+- git bisec start
+- git status
+  You're currently bisecting from main
+- git bisect bad a309595jk
+- git bisect good 4jdjd885
+  Starting and ending point, bisect will cut the    project in half and find the bad commit. 
+- git bisect good
+
+21. How to revert changes with Git?
+
+- git revert dfh4666 - command number. It references to the commit. 
+
+22. Why commit relationships matter?
+
+Each commit has a special relationship with the commit made before it. It also refers to a parent commit before it. Commiting frequently gives us the advantage of troubleshooting commits that have broken something in the build process and being able to revert back without loosing too much work. 
+
+23. Where does exactly git store all of its data?
+
+Git stores data in .git directory. If we type ls this is going to show us a list of our files and folders inside of our git repository, but there is no .git directory there. That is because it's what called the hidden directory. We can type ls -al, which is a command that shows us a list of all of our files, even the hidden files inside of our git repository. There is also the config. The config file contains the configuration options that are specific to this repository. Now this is where we can tell git to store our user name, our password for identification when making commits or we can tell git to create shortcuts to specific git commands. The head file points to the branch that we're currently checked out to. The head is our lens. It points to whatever branch we're currently working on. The index is another important file. This is also referred to as that staging area. This is a file where git stores the staging area information before a commit is made.  This is a directory where git stores the pointers to the object data in the project. These pointers are the branches.
