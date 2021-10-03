@@ -105,3 +105,34 @@ Design flow that goes from input form to buttons and then to search button. Why?
 20. How to create visual interactions?
 
 Make sure there are multiple ways of finding out the same piece of information. 
+
+21. What is proximity in design?
+
+Pieces of information must be chunked appropriately and be placed together. 
+
+22. What are the expectations?
+
+Make sure that if something suggests it is a link, then it must be a link. Don't confuse the users. Buttons are buttons. Be careful for automatic JavaScript complete in the form - auto advancing field in the screen readers. It'a annoying for the people with the disabilities. 
+
+23. What type of people's disabilities we need to consider while designing the interface?
+
+- visual
+- auditory
+- mobility & dexterity
+- cognitive
+
+24. What are accessibility views?
+
+- never autoplay the content on the website
+- write good titles of the web
+- use link
+- use button
+- use div and allow this div to be clickable
+
+25. What is user research team?
+
+Represents people with disabilities in interviews, talk-aloud sessions, focus groups, usabilitytesting, and focused accessibility testing. 
+
+26. What is content strategist?
+
+Works with people whp have disabilities to discover their thought processes and determine key clues to help them navigate and perform actions. 
