@@ -18,4 +18,39 @@ THE ORDER IS IMPORTANT! THE ORDER OF TRANSFORM ACTION WILL AFFECT THE FINAL RESU
 transform: rotate(46deg) scale(2) translate(100px, 200px); 
 
 
-2. 
+2. What is 3D transform?
+
+With the CSS transform property you can use the following 3D transformation methods:
+
+rotateX()
+rotateY()
+rotateZ()
+
+The rotateX() method rotates an element around its X-axis at a given degree:
+
+#myDiv {
+  transform: rotateX(150deg);
+}
+
+The rotateY() method rotates an element around its Y-axis at a given degree:
+
+#myDiv {
+  transform: rotateY(150deg);
+}
+
+The rotateZ() method rotates an element around its Z-axis at a given degree:
+
+#myDiv {
+  transform: rotateZ(90deg);
+}
+
+3. What is perspective?
+
+Perspective specifies on how 3D elements are viewed. 
+
+
+
+
+
+
+
