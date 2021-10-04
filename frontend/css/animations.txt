@@ -48,6 +48,9 @@ The rotateZ() method rotates an element around its Z-axis at a given degree:
 
 Perspective specifies on how 3D elements are viewed. 
 
+4. What is CSS Transition?
+
+Transition allows changes in a property to take place over time. 
 
 
 
