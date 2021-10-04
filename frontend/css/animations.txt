@@ -52,7 +52,39 @@ Perspective specifies on how 3D elements are viewed.
 
 Transition allows changes in a property to take place over time. 
 
+5. What is CSS Keyframe animation?
 
+Keyframe animation defines sequence of states within the @keyframes rule. 
+
+Two Steps:
+- define the animation keyframes in @keyframes rule
+- assign the keyframes to an element
+
+- 0% or "from" keyframe is the start of the animation
+- 100% or "to" keyframe is the end of the animation
+
+@keyframes scaleIn {
+    0% {
+        transform: scale(0.2);
+    }
+    85% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+h2 {
+    font-size: 5rem;
+    text-align: center;
+    color: red;
+    text-shadow: rgb(224, 214, 214);
+    animation-name: scaleIn; /* call it from keyframes */
+    animation-duration: 2s;
+}
+
+scaleIn ---> don't forget to name randomly the animation!
 
 
 
