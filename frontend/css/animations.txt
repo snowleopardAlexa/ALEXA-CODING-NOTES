@@ -86,6 +86,97 @@ h2 {
 
 scaleIn ---> don't forget to name randomly the animation!
 
+6. What is animation delay?
 
+Animation delay specifies the amount of time to wait before beginning to perform the animation. 
 
+h2 {
+    font-size: 5rem;
+    text-align: center;
+    color: red;
+    text-shadow: rgb(224, 214, 214);
+    animation-name: scaleIn; /* call it from keyframes */
+    animation-duration: 2s;
+    animation-delay: 2s;
+}
 
+7. What is animation-fill-mode?
+
+Animation fill mode lets you control what happens during delays before an animatio starts actively playing, and/or what happens after an animation's duration has ended. 
+
+h2 {
+    font-size: 5rem;
+    text-align: center;
+    color: red;
+    text-shadow: rgb(224, 214, 214);
+    animation-name: scaleIn; /* call it from keyframes */
+    animation-duration: 2s;
+    animation-delay: 2s;
+    animation-fill-mode: backwards;
+}
+
+8. What is animation direction?
+
+Animation direction lets you control what order our keyframes are executed in. 
+
+Values:
+normal, reverse, alternate, alternate-reverse.
+
+When you use alternate and alternate-reverse you need to have animation-iteration-count more than 1.
+
+.lion {
+    width: 100px;
+    height: 100px;
+    animation-name: move;
+    animation-duration: 3s;
+    animation-fill-mode:  forwards;
+    animation-iteration-count: 3;
+    animation-direction: alternate;
+}
+
+9. What is easing?
+
+Easing is what describes the speed changes of your animation over the course of its duration.
+
+10. What are the 3 options for animation-timing-functions?
+
+- easing keywords
+- the steps() function
+- custom cubic-brezier curves
+
+11. What are the keyword easing options in CSS?
+
+- ease 
+- ease-in-out
+- ease-in 
+- ease-out
+- linear 
+
+12. What is the steps() timing function?
+
+Steps() function plays an animation back in a defined number of steps, pausing briefly at each, instead of smoothly interpolating between keyframes states.
+
+h2 {
+    font-size: 2rem;
+    animation-name: typing;
+    animation-duration: 3s;
+    animation-timing-function: steps(5);
+}
+
+@keyframes typing {
+    0% {
+        width: 0px;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes blinking {
+    0%, 100% {
+        border-color: transparent;
+    }
+    50% {
+      border-color: red;
+    }
+}
